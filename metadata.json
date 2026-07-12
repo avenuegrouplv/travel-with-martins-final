@@ -1,6 +1,8 @@
 {
-  "name": "Martins travel",
-  "description": "A modern, minimalist travel website template.",
+  "name": "Ceļo ar Mārtiņu",
+  "description": "Aktīvās atpūtas un kalnu pārgājienu ceļojumu mājaslapa ar Mārtiņu",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
