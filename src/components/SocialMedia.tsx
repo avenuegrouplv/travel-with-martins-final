@@ -6,7 +6,7 @@ const FACEBOOK_POSTS = [
   {
     id: "fb-1",
     author: "Travel with Martins",
-    handle: "travelwithmartins.lv",
+    handle: "travelwithmartins.com",
     date: "Pirms 2 dienām",
     text: "Tikko atgriezos no neaizmirstama brauciena un vēlos padalīties ar 3 lietām, kuras pilnībā mainīja manu skatījumu uz ceļojumu plānošanu. Ja arī Tu vēlies ceļot bez stresa, piesakies uz bezmaksas konsultāciju! 🌍✈️",
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format,webp&fit=crop&w=400&q=65",
@@ -18,7 +18,7 @@ const FACEBOOK_POSTS = [
   {
     id: "fb-2",
     author: "Travel with Martins",
-    handle: "travelwithmartins.lv",
+    handle: "travelwithmartins.com",
     date: "Pirms 5 dienām",
     text: "Vai zināji, ka ceļojumi un jauna pieredze ir vislabākais veids, kā investēt savā personīgajā izaugsmē? Katrs jauns galamērķis paplašina redzesloku un dod neatsveramu brīvības sajūtu. Seko līdzi maniem ieteikumiem! 📚✨",
     image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format,webp&fit=crop&w=400&q=65",
@@ -30,7 +30,7 @@ const FACEBOOK_POSTS = [
   {
     id: "fb-3",
     author: "Travel with Martins",
-    handle: "travelwithmartins.lv",
+    handle: "travelwithmartins.com",
     date: "Pirms 1 nedēļas",
     text: "Kāpēc izvēlēties sadarbību ar mani? Tāpēc, ka es dalos tikai ar reālu, paša pārbaudītu pieredzi jau kopš 2018. gada. Nav tukšu solījumu – tikai godīgs atbalsts un labākie risinājumi Taviem sapņu galamērķiem! 🤝🏝️",
     image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format,webp&fit=crop&w=400&q=65",
@@ -42,7 +42,7 @@ const FACEBOOK_POSTS = [
   {
     id: "fb-4",
     author: "Travel with Martins",
-    handle: "travelwithmartins.lv",
+    handle: "travelwithmartins.com",
     date: "Pirms 2 nedēļām",
     text: "Gatavi jaunam piedzīvojumam? Jūlijā plānojam vairākas bezmaksas Zoom prezentācijas, kurās pastāstīšu par populārākajiem galamērķiem un sadarbības iespējām. Raksti man PM vai piesakies mājaslapā! 🤝📲",
     image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format,webp&fit=crop&w=400&q=65",

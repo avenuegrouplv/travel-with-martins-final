@@ -37,75 +37,75 @@ export default function Blog() {
       title: "Kā saplānot ceļojumu uz Turciju un ietaupīt līdz pat 30%?",
       desc: "Praktiski padomi, kā piemeklēt izdevīgākās viesnīcas un lidojumus, un kādas kļūdas nepieļaut rezervācijas laikā.",
       category: "Ceļvedis",
-      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format,webp&fit=crop&w=500&q=70"
+      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=500&q=75"
     },
     {
       title: "5 lietas, ko ņemt vērā, pirmo reizi dodoties uz eksotisko Taizemi",
       desc: "No vietējās kultūras etiķetes līdz drošības pasākumiem un labākajiem ēdienu tirdziņiem. Sagatavojies savam Āzijas piedzīvojumam.",
       category: "Padomi",
-      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format,webp&fit=crop&w=500&q=70"
+      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=500&q=75"
     },
     {
       title: "Maldīvu salas vai Dominikāna: kuru tropu kūrortu izvēlēties?",
       desc: "Salīdzinām cenas, pludmales, aktivitāšu klāstu un dabu, lai palīdzētu Tev izvēlēties piemērotāko paradīzes nostūri.",
       category: "Apskats",
-      image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format,webp&fit=crop&w=500&q=70"
+      image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=500&q=75"
     },
     {
       title: "Kā ceļošana maina cilvēka domāšanu un paplašina dzīves redzesloku",
       desc: "Dalos savā personīgajā pieredzē, kā jaunu kultūru un cilvēku iepazīšana palīdz iegūt iekšēju brīvību un mainīt skatījumu uz pasauli.",
       category: "Pieredze",
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format,webp&fit=crop&w=500&q=70"
+      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=500&q=75"
     }
   ] : lang === "EN" ? [
     {
       title: "How to plan a trip to Turkey and save up to 30%?",
       desc: "Practical tips on finding the most affordable hotels and flights, and what mistakes to avoid during booking.",
       category: "Guide",
-      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format,webp&fit=crop&w=500&q=70"
+      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=500&q=75"
     },
     {
       title: "5 things to consider when traveling to exotic Thailand for the first time",
       desc: "From local cultural etiquette to safety measures and the best food markets. Prepare for your Asian adventure.",
       category: "Tips",
-      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format,webp&fit=crop&w=500&q=70"
+      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=500&q=75"
     },
     {
       title: "Maldives or Dominican Republic: which tropical resort to choose?",
       desc: "We compare prices, beaches, activities, and nature to help you pick the perfect slice of paradise.",
       category: "Review",
-      image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format,webp&fit=crop&w=500&q=70"
+      image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=500&q=75"
     },
     {
       title: "How travel changes human thinking and broadens life's horizons",
       desc: "I share my personal experience on how meeting new cultures and people helps gain inner freedom and shift perspective on the world.",
       category: "Experience",
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format,webp&fit=crop&w=500&q=70"
+      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=500&q=75"
     }
   ] : [
     {
       title: "Как спланировать поездку в Турцию и сэкономить до 30%?",
       desc: "Практические советы по поиску наиболее доступных отелей и авиабилетов, а также каких ошибок следует избегать при бронировании.",
       category: "Руководство",
-      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format,webp&fit=crop&w=500&q=70"
+      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=500&q=75"
     },
     {
       title: "5 вещей, которые стоит учесть при первой поездке в экзотический Таиланд",
       desc: "От местного культурного этикета до мер безопасности и лучших продовольственных рынков. Подготовьтесь к азиатскому приключению.",
       category: "Советы",
-      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format,webp&fit=crop&w=500&q=70"
+      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=500&q=75"
     },
     {
       title: "Мальдивы или Доминикана: какой тропический курорт выбрать?",
       desc: "Сравниваем цены, пляжи, виды деятельности и природу, чтобы помочь вам выбрать идеальный уголок рая.",
       category: "Обзор",
-      image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format,webp&fit=crop&w=500&q=70"
+      image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=500&q=75"
     },
     {
       title: "Как путешествия меняют человеческое мышление и расширяют кругозор",
       desc: "Делюсь личным опытом о том, как знакомство с новыми культурами и людьми помогает обрести внутреннюю свободу и изменить взгляд на мир.",
       category: "Опыт",
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format,webp&fit=crop&w=500&q=70"
+      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=500&q=75"
     }
   ];
 
@@ -190,7 +190,16 @@ export default function Blog() {
                 className="group bg-white border border-[#EAE6DD] rounded-2xl overflow-hidden hover:shadow-md hover:border-[#D4AF37]/30 transition-all duration-300 flex flex-col justify-between"
               >
                 <div className="relative aspect-video overflow-hidden bg-zinc-100">
-                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img 
+                    src={post.image} 
+                    alt={post.title} 
+                    loading="eager"
+                    decoding="async"
+                    width="500"
+                    height="281"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  />
                   <span className="absolute top-3 left-3 bg-[#0D1B2A] text-[#D4AF37] text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
                     {post.category}
                   </span>

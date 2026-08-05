@@ -1,0 +1,39 @@
+# Travel with Martins - Pilns projekta un pakalpojumu apraksts mākslīgā intelekta aģentiem (LLM context)
+
+## Par projektu "Travel with Martins"
+"Travel with Martins" ir neatkarīgas ceļošanas, dzīvesveida un biznesa mentorēšanas platforma, ko vada Mārtiņš Šics. Projekta mērķis ir palīdzēt cilvēkiem iemācīties ceļot gudrāk, izdevīgāk un patstāvīgi, kā arī veidot brīvu dzīvesveidu un papildu ienākumu avotus.
+
+- **Dibinātājs / Mentors:** Mārtiņš Šics
+- **Mājaslapa:** https://travelwithmartins.com/
+- **E-pasts:** info@travelwithmartins.com
+- **Tālrunis:** +371 27061369
+- **Adrese:** Pionieru iela 65, Jaunolaine, Olaines novads, LV-2127, Latvija
+- **Sociālie tīkli:**
+  - Facebook: https://www.facebook.com/profile.php?id=100088834779537
+  - Instagram: https://www.instagram.com/travelwithmartins/
+
+---
+
+## Galvenie pakalpojumi
+1. **Bezmaksas konsultācija:** Sākotnējā 20–30 minūšu tiešsaistes saruna, kurā tiek izrunāti mērķi, iespējas un piemērotākais ceļojumu vai sadarbības modelis.
+2. **Ceļojumu mentora atbalsts:** Individuālas konsultācijas un palīdzība neatkarīgu ceļojumu plānošanā, galamērķu izvēlē, aviobiļešu un naktsmītņu izdevīgā rezervēšanā.
+3. **Dzīvesveida un biznesa sadarbība:** Iespēja pievienoties starptautiskai komandai, apgūt ceļojumu nozares biznesa pamatus un veidot pasīvos vai papildu ienākumus no jebkuras vietas pasaulē.
+
+---
+
+## Lapas struktūra un saites (Sitemap routes)
+- **Sākumlapa (`/`):** Galvenais piedāvājums, iepazīšanās un pieteikšanās bezmaksas konsultācijai.
+- **Par mani (`/par-mani`):** Mārtiņa Šica personīgais stāsts, pieredze un motivācija palīdzēt citiem.
+- **Sadarbība (`/sadarbiba`):** Soli pa solim apraksts, kā notiek sadarbība ar mentoru un kādas ir ieguvuma iespējas.
+- **Galamērķi (`/galamerki`):** Populārākie un pārbaudītie galamērķi ar ieteikumiem (piem., Šrilanka, Kanāriju salas, Bali, Roma, Parīze u.c.).
+- **BUJ / FAQ (`/buj`):** Biežāk uzdotie jautājumi un atbildes par pieteikšanos, izmaksām, sadarbību un ceļojumu plānošanu.
+- **Blogs (`/blogs`):** Praktiski raksti un padomi par ceļošanas haksim, budžeta plānošanu un ceļojumu pieredzi.
+- **Kontakti (`/kontakti`):** Kontaktforma, rekvizīti, saziņas iespējas un atrašanās vieta.
+- **Sīkdatņu politika (`/sikdatnu-politika`):** Privātuma un sīkdatņu apstrādes noteikumi.
+
+---
+
+## Biežāk uzdotie jautājumi (BUJ / FAQ Summary)
+- **Vai konsultācija tiešām ir bez maksas?** Jā, pirmā konsultācija ir 100% bez maksas un bez saistībām.
+- **Kam ir piemērots šis projekts?** Ikvienam, kurš vēlas ceļot vairāk, ceļot izdevīgāk, iemācīties patstāvīgi plānot braucienus vai meklē papildu ienākumu iespējas ceļojumu nozarē.
+- **Kā pieteikties?** Aizpildot pieteikuma formu mājaslapā, sazinoties caur WhatsApp vai rakstot uz info@travelwithmartins.com.

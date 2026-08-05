@@ -2,47 +2,66 @@
 <html lang="lv">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=12" />
-    <link rel="icon" type="image/webp" href="/favicon.webp?v=12" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=12" />
-    <link rel="shortcut icon" href="/favicon.ico?v=12" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/favicon-192.png?v=12" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0D1B2A" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Preconnect to Google Fonts and image CDN for faster delivery -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://pub-5eb70b89ca2248c8bdc564aeb0e101f5.r2.dev" crossorigin />
+    <!-- Preconnect to Unsplash for fast delivery -->
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
     
-    <!-- Load Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Preload critical local font files for zero FOUT -->
+    <link rel="preload" href="/fonts/inter-300-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/space-grotesk-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
     
-    <!-- Preload critical Hero background image (LCP element) -->
-    <link rel="preload" href="https://pub-5eb70b89ca2248c8bdc564aeb0e101f5.r2.dev/background3.webp" as="image" type="image/webp" fetchpriority="high" crossorigin />
+    <!-- Preload critical Hero background images & key section images -->
+    <link rel="preload" href="/background-1.webp" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/background-2.webp" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/background-3.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/background-4.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/background-5.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/piesakies-bezmaksas-konsultacijai-ar-martinu.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/celo-vairak-veido-dzivi-brivaku.webp" as="image" type="image/webp" />
+
+    <!-- Preload popular destination and blog/tips images for instant rendering -->
+    <link rel="preload" href="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=500&q=75" as="image" />
+    <link rel="preload" href="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=500&q=75" as="image" />
+    <link rel="preload" href="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=500&q=75" as="image" />
+    <link rel="preload" href="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=500&q=75" as="image" />
+    <link rel="preload" href="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=500&q=75" as="image" />
+    <link rel="preload" href="https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=500&q=75" as="image" />
+    <link rel="preload" href="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=500&q=75" as="image" />
     
     <!-- Primary Meta Tags -->
     <title>Ceļošana kā dzīvesveids I Travel with Martins</title>
-    <meta name="description" content="Ceļo patstāvīgi, izvēlies izdevīgākos galamērķus un veido savu jauno dzīvesveidu ar personīgā mentora atbalstu. Sāc jau šodien!" />
-    <link rel="canonical" href="https://travelwithmartins.lv/" />
+    <meta name="description" content="Iedvesmojies ceļot gudrāk un veidot dzīvi ar vairāk brīvības! Mārtiņa pieredze, praktiski risinājumi un mentora atbalsts tavam jaunajam dzīvesveidam. Sāc jau šodien!" />
+    <link rel="canonical" href="https://travelwithmartins.com/" />
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / WhatsApp / Facebook / Telegram -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://travelwithmartins.lv/" />
+    <meta property="og:url" content="https://travelwithmartins.com/" />
     <meta property="og:title" content="Ceļošana kā dzīvesveids I Travel with Martins" />
-    <meta property="og:description" content="Ceļo patstāvīgi, izvēlies izdevīgākos galamērķus un veido savu jauno dzīvesveidu ar personīgā mentora atbalstu. Sāc jau šodien!" />
-    <meta property="og:image" content="https://travelwithmartins.lv/og-image.png?v=12" />
-    <meta property="og:image:width" content="256" />
-    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="Iedvesmojies ceļot gudrāk un veidot dzīvi ar vairāk brīvības! Mārtiņa pieredze, praktiski risinājumi un mentora atbalsts tavam jaunajam dzīvesveidam." />
+    <meta property="og:image" content="https://travelwithmartins.com/images/logo_share.png" />
+    <meta property="og:image:secure_url" content="https://travelwithmartins.com/images/logo_share.png" />
+    <meta property="og:image:width" content="122" />
+    <meta property="og:image:height" content="122" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:alt" content="Travel with Martins Logo" />
+    <meta property="og:site_name" content="Travel with Martins" />
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:url" content="https://travelwithmartins.lv/" />
-    <meta property="twitter:title" content="Ceļošana kā dzīvesveids I Travel with Martins" />
-    <meta property="twitter:description" content="Ceļo patstāvīgi, izvēlies izdevīgākos galamērķus un veido savu jauno dzīvesveidu ar personīgā mentora atbalstu. Sāc jau šodien!" />
-    <meta property="twitter:image" content="https://travelwithmartins.lv/og-image.png?v=12" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://travelwithmartins.com/" />
+    <meta name="twitter:title" content="Ceļošana kā dzīvesveids I Travel with Martins" />
+    <meta name="twitter:description" content="Iedvesmojies ceļot gudrāk un veidot dzīvi ar vairāk brīvības! Mārtiņa pieredze, praktiski risinājumi un mentora atbalsts tavam jaunajam dzīvesveidam." />
+    <meta name="twitter:image" content="https://travelwithmartins.com/images/logo_share.png" />
   </head>
   <body>
     <div id="root"></div>

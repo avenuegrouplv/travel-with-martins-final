@@ -183,6 +183,11 @@ export default function Destinations() {
                     <img
                       src={item.image}
                       alt={localizedItem.name}
+                      loading="eager"
+                      decoding="async"
+                      width="500"
+                      height="281"
+                      referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     

@@ -1,4 +1,24 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://travelwithmartins.lv/sitemap.xml
+# AI search crawlers & LLM agents
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://travelwithmartins.com/sitemap.xml
+

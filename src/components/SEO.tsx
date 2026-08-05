@@ -12,7 +12,7 @@ const seoData: Record<"LV" | "EN" | "RU", Record<string, SEOMetadata>> = {
   LV: {
     "/": {
       title: "Ceļošana kā dzīvesveids I Travel with Martins",
-      description: "Ceļo patstāvīgi, izvēlies izdevīgākos galamērķus un veido savu jauno dzīvesveidu ar personīgā mentora atbalstu. Sāc jau šodien!",
+      description: "Iedvesmojies ceļot gudrāk un veidot dzīvi ar vairāk brīvības! Mārtiņa pieredze, praktiski risinājumi un mentora atbalsts tavam jaunajam dzīvesveidam. Sāc jau šodien!",
     },
     "/par-mani": {
       title: "Par mani - Ceļošana kā dzīvesveids | Travel with Martins",
@@ -24,7 +24,7 @@ const seoData: Record<"LV" | "EN" | "RU", Record<string, SEOMetadata>> = {
     },
     "/galamerki": {
       title: "Aizraujoši galamērķi un ceļojumi | Travel with Martins",
-      description: "Atklāj labākos un izdevīgākos ceļojumu galamērķus. Plāno savu nākamo piedzīvojumu kopā ar mums un baudi brīvību.",
+      description: "Atklāj labākos un izdevīgākos ceļojumu galamērķus. Plāno savu nākamo piedzīvojumu kopā ar Mārtiņu un baudi brīvību.",
     },
     "/buj": {
       title: "Biežāk uzdotie jautājumi (BUJ) | Travel with Martins",
@@ -36,7 +36,7 @@ const seoData: Record<"LV" | "EN" | "RU", Record<string, SEOMetadata>> = {
     },
     "/kontakti": {
       title: "Saziņa un kontakti | Travel with Martins",
-      description: "Sazinies ar mums! Uzdot jautājumus par sadarbību, ceļojumu plānošanu vai pieteikties konsultācijai.",
+      description: "Sazinies ar mani! Uzdod jautājumus par sadarbību, ceļojumu plānošanu vai piesakies konsultācijai.",
     },
     "/sikdatnu-politika": {
       title: "Sīkdatņu politika | Travel with Martins",
@@ -58,7 +58,7 @@ const seoData: Record<"LV" | "EN" | "RU", Record<string, SEOMetadata>> = {
     },
     "/galamerki": {
       title: "Exciting Destinations and Trips | Travel with Martins",
-      description: "Discover the best and most affordable travel destinations. Plan your next adventure with us and enjoy ultimate freedom.",
+      description: "Discover the best and most affordable travel destinations. Plan your next adventure with me and enjoy ultimate freedom.",
     },
     "/buj": {
       title: "Frequently Asked Questions (FAQ) | Travel with Martins",
@@ -69,8 +69,8 @@ const seoData: Record<"LV" | "EN" | "RU", Record<string, SEOMetadata>> = {
       description: "Useful articles, travel stories, and practical tips on smart traveling, choosing destinations, and building a free lifestyle.",
     },
     "/kontakti": {
-      title: "Contact Us | Travel with Martins",
-      description: "Get in touch with us! Ask questions about collaboration, travel planning, or sign up for a personal consultation.",
+      title: "Contact & Consultation | Travel with Martins",
+      description: "Get in touch with me! Ask questions about collaboration, travel planning, or sign up for a personal consultation.",
     },
     "/sikdatnu-politika": {
       title: "Cookie Policy | Travel with Martins",
@@ -92,7 +92,7 @@ const seoData: Record<"LV" | "EN" | "RU", Record<string, SEOMetadata>> = {
     },
     "/galamerki": {
       title: "Увлекательные направления и путешествия | Travel with Martins",
-      description: "Откройте для себя лучшие и самые доступные туристические направления. Спланируйте свое следующее приключение с нами и наслаждайтесь свободой.",
+      description: "Откройте для себя лучшие и самые доступные туристические направления. Спланируйте свое следующее приключение со мной и наслаждайтесь свободой.",
     },
     "/buj": {
       title: "Часто задаваемые вопросы (FAQ) | Travel with Martins",
@@ -103,8 +103,8 @@ const seoData: Record<"LV" | "EN" | "RU", Record<string, SEOMetadata>> = {
       description: "Полезные статьи, истории путешествий и практические советы по умным поездкам, выбору направлений и созданию свободного стиля жизни.",
     },
     "/kontakti": {
-      title: "Свяжитесь с нами | Travel with Martins",
-      description: "Свяжитесь с нами! Задайте вопросы о сотрудничестве, планировании путешествий или запишитесь на консультацию.",
+      title: "Связь и контакты | Travel with Martins",
+      description: "Свяжитесь со мной! Задайте вопросы о сотрудничестве, планировании путешествий или запишитесь на консультацию.",
     },
     "/sikdatnu-politika": {
       title: "Политика использования файлов cookie | Travel with Martins",
@@ -150,14 +150,15 @@ export default function SEO() {
     
     // Construct absolute URLs for canonical/meta sharing
     const cleanPath = path === "/" ? "" : (path.startsWith("/") ? path : `/${path}`);
-    const absoluteUrl = `https://travelwithmartins.lv${cleanPath}`;
+    const absoluteUrl = `https://travelwithmartins.com${cleanPath}`;
     updateMeta("property", "og:url", absoluteUrl);
 
-    // Logo image is highly optimized for Open Graph (WhatsApp/Telegram square preview)
-    const ogImage = "https://travelwithmartins.lv/og-image.png?v=12";
+    // Logo image is highly optimized for Open Graph (WhatsApp/Telegram/Facebook preview)
+    const ogImage = "https://travelwithmartins.com/images/logo_share.png";
     updateMeta("property", "og:image", ogImage);
-    updateMeta("property", "og:image:width", "256");
-    updateMeta("property", "og:image:height", "256");
+    updateMeta("property", "og:image:secure_url", ogImage);
+    updateMeta("property", "og:image:width", "122");
+    updateMeta("property", "og:image:height", "122");
     updateMeta("property", "og:image:type", "image/png");
     updateMeta("property", "og:image:alt", "Travel with Martins Logo");
     updateMeta("property", "og:site_name", "Travel with Martins");
@@ -209,10 +210,10 @@ export default function SEO() {
 
     // 7. Set Hreflang Tags (Multilingual SEO) - Clear previous ones to avoid duplicate accumulation
     document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
-    updateLink("alternate", `https://travelwithmartins.lv${cleanPath}`, { hreflang: "x-default" });
-    updateLink("alternate", `https://travelwithmartins.lv${cleanPath}`, { hreflang: "lv" });
-    updateLink("alternate", `https://travelwithmartins.lv${cleanPath}?lang=en`, { hreflang: "en" });
-    updateLink("alternate", `https://travelwithmartins.lv${cleanPath}?lang=ru`, { hreflang: "ru" });
+    updateLink("alternate", `https://travelwithmartins.com${cleanPath}`, { hreflang: "x-default" });
+    updateLink("alternate", `https://travelwithmartins.com${cleanPath}`, { hreflang: "lv" });
+    updateLink("alternate", `https://travelwithmartins.com${cleanPath}?lang=en`, { hreflang: "en" });
+    updateLink("alternate", `https://travelwithmartins.com${cleanPath}?lang=ru`, { hreflang: "ru" });
 
     // 8. Dynamic JSON-LD Structured Data (Schema.org)
     const organizationSchema: any = {
@@ -220,12 +221,12 @@ export default function SEO() {
       "@type": "LocalBusiness",
       "name": "Travel with Martins",
       "legalName": "Mārtiņš Šics",
-      "url": "https://travelwithmartins.lv/",
-      "logo": "https://travelwithmartins.lv/logo.png",
-      "image": "https://travelwithmartins.lv/logo.png",
+      "url": "https://travelwithmartins.com/",
+      "logo": "https://travelwithmartins.com/logo.png",
+      "image": "https://travelwithmartins.com/logo.png",
       "description": metadata.description,
       "telephone": "+371 27061369",
-      "email": "info@travelwithmartins.lv",
+      "email": "info@travelwithmartins.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Pionieru iela 65, Jaunolaine",
@@ -244,7 +245,7 @@ export default function SEO() {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Travel with Martins",
-      "url": "https://travelwithmartins.lv/"
+      "url": "https://travelwithmartins.com/"
     };
 
     const webpageSchema: any = {
@@ -270,7 +271,7 @@ export default function SEO() {
             "@type": "ListItem",
             "position": 1,
             "name": lang === "LV" ? "Sākums" : lang === "EN" ? "Home" : "Главная",
-            "item": "https://travelwithmartins.lv/"
+            "item": "https://travelwithmartins.com/"
           },
           {
             "@type": "ListItem",
@@ -341,7 +342,7 @@ export default function SEO() {
         "provider": {
           "@type": "LocalBusiness",
           "name": "Travel with Martins",
-          "image": "https://travelwithmartins.lv/logo.png"
+          "image": "https://travelwithmartins.com/logo.png"
         },
         "description": metadata.description,
         "areaServed": "LV"

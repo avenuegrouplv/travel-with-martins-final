@@ -39,9 +39,10 @@ export default function ContactForm({ lang: propLang }: ContactFormProps) {
           name: vards,
           phone: talrunis,
           email: epasts,
+          replyto: epasts,
           message: zina,
           subject: "Jauns saziņas pieprasījums no mājaslapas (Travel with Martins)",
-          from_name: "Travel with Martins",
+          from_name: "Travel with Martins Saziņas Forma",
         }),
       });
 

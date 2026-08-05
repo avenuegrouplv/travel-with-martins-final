@@ -41,19 +41,19 @@ const HERO_IMAGES: Array<{
   positionClass?: string;
 }> = [
   {
-    image: "https://pub-5eb70b89ca2248c8bdc564aeb0e101f5.r2.dev/background3.webp"
+    image: "/background-1.webp"
   },
   {
-    image: "https://pub-5eb70b89ca2248c8bdc564aeb0e101f5.r2.dev/background4.webp"
+    image: "/background-2.webp"
   },
   {
-    image: "https://pub-5eb70b89ca2248c8bdc564aeb0e101f5.r2.dev/background5.webp"
+    image: "/background-3.webp"
   },
   {
-    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format,webp&fit=crop&w=1200&q=70"
+    image: "/background-4.webp"
   },
   {
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format,webp&fit=crop&w=1200&q=70"
+    image: "/background-5.webp"
   }
 ];
 
@@ -81,25 +81,25 @@ const HELPFUL_TIPS_DATA = [
   {
     title: "Kā saplānot ceļojumu uz Turciju un ietaupīt līdz pat 30%?",
     category: "Ceļvedis",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format,webp&fit=crop&w=500&q=70",
+    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=500&q=75",
     desc: "Praktiski padomi, kā piemeklēt izdevīgākās viesnīcas un lidojumus, un kādas kļūdas nepieļaut rezervācijas laikā."
   },
   {
     title: "5 lietas, ko ņemt vērā, pirmo reizi dodoties uz eksotisko Taizemi",
     category: "Padomi",
-    image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format,webp&fit=crop&w=500&q=70",
+    image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=500&q=75",
     desc: "No vietējās kultūras etiķetes līdz drošības pasākumiem un labākajiem ēdienu tirdziņiem. Sagatavojies savam Āzijas piedzīvojumam."
   },
   {
     title: "Maldīvu salas vai Dominikāna: kuru tropu kūrortu izvēlēties?",
     category: "Apskats",
-    image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format,webp&fit=crop&w=500&q=70",
+    image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=500&q=75",
     desc: "Salīdzinām cenas, pludmales, aktivitāšu klāstu un dabu, lai palīdzētu Tev izvēlēties piemērotāko paradīzes nostūri."
   },
   {
     title: "Kā ceļošana maina cilvēka domāšanu un paplašina dzīves redzesloku",
     category: "Pieredze",
-    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format,webp&fit=crop&w=500&q=70",
+    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=500&q=75",
     desc: "Dalos savā personīgajā pieredzē, kā jaunu kultūru un cilvēku iepazīšana palīdz iegūt iekšēju brīvību un mainīt skatījumu uz pasauli."
   }
 ];
@@ -111,7 +111,7 @@ export default function Home() {
   const t = translations[lang];
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [loadedSlides, setLoadedSlides] = useState<number[]>([0]);
+  const [loadedSlides, setLoadedSlides] = useState<number[]>([0, 1, 2, 3, 4]);
   const [openFaqId, setOpenFaqId] = useState<number | null>(null);
   const [selectedDestinationId, setSelectedDestinationId] = useState<string | null>(null);
   const [selectedTipIndex, setSelectedTipIndex] = useState<number | null>(null);
@@ -212,50 +212,50 @@ export default function Home() {
     {
       title: "How to plan a trip to Turkey and save up to 30%?",
       category: "Guide",
-      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format,webp&fit=crop&w=500&q=70",
+      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=500&q=75",
       desc: "Practical tips on how to find the best hotels and flights, and what mistakes to avoid during booking."
     },
     {
       title: "5 things to consider when traveling to exotic Thailand for the first time",
       category: "Tips",
-      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format,webp&fit=crop&w=500&q=70",
+      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=500&q=75",
       desc: "From local cultural etiquette to safety measures and the best food markets. Prepare for your Asian adventure."
     },
     {
       title: "Maldives or Dominican Republic: which tropical resort to choose?",
       category: "Review",
-      image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format,webp&fit=crop&w=500&q=70",
+      image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=500&q=75",
       desc: "We compare prices, beaches, range of activities, and nature to help you choose your ideal piece of paradise."
     },
     {
       title: "How traveling changes a person's thinking and expands life horizons",
       category: "Experience",
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format,webp&fit=crop&w=500&q=70",
+      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=500&q=75",
       desc: "I share my personal experience on how meeting new cultures and people helps gain inner freedom and change your perspective on the world."
     }
   ] : [
     {
       title: "Как спланировать поездку в Турцию и сэкономить до 30%?",
       category: "Руководство",
-      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format,webp&fit=crop&w=500&q=70",
+      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=500&q=75",
       desc: "Практические советы о том, как найти лучшие отели и авиабилеты, и каких ошибок избегать при бронировании."
     },
     {
       title: "5 вещей, которые нужно учесть при первой поездке в экзотический Таиланд",
       category: "Советы",
-      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format,webp&fit=crop&w=500&q=70",
+      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=500&q=75",
       desc: "От местного культурного этикета до мер безопасности и лучших продовольственных рынков. Подготовьтесь к своему азиатскому приключению."
     },
     {
       title: "Мальдивы или Доминикана: какой тропический курорт выбрать?",
       category: "Обзор",
-      image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format,webp&fit=crop&w=500&q=70",
+      image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=500&q=75",
       desc: "Сравниваем цены, пляжи, выбор развлечений и природу, чтобы помочь вам выбрать идеальный уголок рая."
     },
     {
       title: "Как путешествия меняют мышление человека и расширяют жизненный кругозор",
       category: "Опыт",
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format,webp&fit=crop&w=500&q=70",
+      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=500&q=75",
       desc: "Делюсь личным опытом о том, как знакомство с новыми культурами и людьми помогает обрести внутреннюю свободу и изменить взгляд на мир."
     }
   ];
@@ -292,20 +292,31 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Preload next slide shortly after mounting
-    const t = setTimeout(() => {
-      setLoadedSlides(prev => Array.from(new Set([...prev, 1])));
-    }, 2000);
-    return () => clearTimeout(t);
+    // Instantly preload and decode all background slides and consultation card images
+    HERO_IMAGES.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.image;
+      if ('decode' in img) {
+        img.decode().catch(() => {});
+      }
+    });
+
+    const keyImages = [
+      "/piesakies-bezmaksas-konsultacijai-ar-martinu.webp",
+      "/celo-vairak-veido-dzivi-brivaku.webp"
+    ];
+    keyImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      if ('decode' in img) {
+        img.decode().catch(() => {});
+      }
+    });
   }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => {
-        const next = (prev + 1) % HERO_IMAGES.length;
-        setLoadedSlides(loaded => Array.from(new Set([...loaded, next, (next + 1) % HERO_IMAGES.length])));
-        return next;
-      });
+      setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
     }, 6000);
     return () => clearInterval(timer);
   }, []);
@@ -328,16 +339,14 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           {HERO_IMAGES.map((slide, idx) => {
             const isActive = idx === currentSlide;
-            const isLoaded = loadedSlides.includes(idx);
-            if (!isLoaded) return null;
             return (
               <img
                 key={idx}
                 src={slide.image}
                 alt="Travel with Martins Background"
                 referrerPolicy="no-referrer"
-                loading={idx === 0 ? "eager" : "lazy"}
-                fetchPriority={idx === 0 ? "high" : "low"}
+                loading="eager"
+                fetchPriority={idx <= 1 ? "high" : "auto"}
                 decoding="async"
                 className={`absolute inset-0 w-full h-full transition-all duration-[1500ms] ease-in-out object-cover ${slide.positionClass || "object-center"} ${
                   isActive 
@@ -415,10 +424,12 @@ export default function Home() {
                 {/* 1. Slide Navigation Button */}
                 <button
                   onClick={() => handleSlideNavigation((activeSlideData as any).targetId)}
-                  className="w-64 h-14 bg-[#D4AF37] text-[#0D1B2A] font-bold text-xs uppercase tracking-widest rounded-none hover:bg-white hover:text-[#0D1B2A] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xl border border-[#D4AF37] flex-shrink-0"
+                  className="w-full sm:w-auto min-w-[17rem] h-14 bg-[#D4AF37] text-[#0D1B2A] font-bold text-xs uppercase tracking-widest rounded-lg hover:bg-white hover:text-[#0D1B2A] transition-all flex items-center justify-center gap-3 px-6 cursor-pointer shadow-xl border border-[#D4AF37] flex-shrink-0 group"
                 >
-                  <span>{activeSlideData.buttonText || (lang === "LV" ? "Atklāj vairāk" : lang === "EN" ? "Discover more" : "Узнать больше")}</span>
-                  <ArrowRight className="w-4 h-4 flex-shrink-0" />
+                  <span className="whitespace-nowrap">{activeSlideData.buttonText || (lang === "LV" ? "Atklāj vairāk" : lang === "EN" ? "Discover more" : "Узнать больше")}</span>
+                  <span className="w-7 h-7 rounded-full bg-[#0D1B2A]/15 group-hover:bg-[#0D1B2A] group-hover:text-white transition-all flex items-center justify-center flex-shrink-0">
+                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                  </span>
                 </button>
 
                 {/* 2. Static Zoom Presentation Button (constant across all slides) */}
@@ -427,10 +438,12 @@ export default function Home() {
                     const target = document.getElementById("sazina");
                     if (target) target.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="w-64 h-14 bg-white/10 border border-white/30 text-white font-bold text-xs uppercase tracking-widest rounded-none hover:bg-white hover:text-[#0D1B2A] transition-all flex items-center justify-center gap-2 shadow-xl cursor-pointer flex-shrink-0"
+                  className="w-full sm:w-auto min-w-[17rem] h-14 bg-white/15 backdrop-blur-md border border-white/30 text-white font-bold text-xs uppercase tracking-widest rounded-lg hover:bg-white hover:text-[#0D1B2A] transition-all flex items-center justify-center gap-3 px-6 shadow-xl cursor-pointer flex-shrink-0 group"
                 >
-                  <span>{lang === "LV" ? "Pieteikties Zoom prezentācijai" : lang === "EN" ? "Apply for Zoom presentation" : "Записаться на презентацию Zoom"}</span>
-                  <ArrowRight className="w-4 h-4 flex-shrink-0" />
+                  <span className="whitespace-nowrap">{lang === "LV" ? "Pieteikties Zoom prezentācijai" : lang === "EN" ? "Apply for Zoom presentation" : "Записаться на презентацию Zoom"}</span>
+                  <span className="w-7 h-7 rounded-full bg-white/20 group-hover:bg-[#0D1B2A] group-hover:text-white transition-all flex items-center justify-center flex-shrink-0">
+                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                  </span>
                 </button>
               </div>
             </motion.div>
@@ -525,19 +538,23 @@ export default function Home() {
           <div className="lg:col-span-5 flex flex-col gap-6 justify-center max-w-md mx-auto w-full">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-[#EAE6DD] bg-[#F2ECE0]/20">
               <img
-                src="https://pub-5eb70b89ca2248c8bdc564aeb0e101f5.r2.dev/piesakies-bezmaksas-konsultacijai.webp"
+                src="/piesakies-bezmaksas-konsultacijai-ar-martinu.webp"
                 alt="Piesakies bezmaksas konsultācijai"
                 className="w-full h-full object-cover object-center"
-                loading="lazy"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 referrerPolicy="no-referrer"
               />
             </div>
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-[#EAE6DD] bg-[#F2ECE0]/20">
               <img
-                src="https://pub-5eb70b89ca2248c8bdc564aeb0e101f5.r2.dev/celo-vairak-nopelni-vairak.webp"
-                alt="Ceļo vairāk, nopelni vairāk"
+                src="/celo-vairak-veido-dzivi-brivaku.webp"
+                alt="Ceļo vairāk, veido dzīvi brīvāku"
                 className="w-full h-full object-cover object-center"
-                loading="lazy"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -780,7 +797,11 @@ export default function Home() {
                   <img 
                     src={item.image} 
                     alt={transItem.name} 
-                    loading="lazy"
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
+                    width="500"
+                    height="281"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
@@ -863,7 +884,10 @@ export default function Home() {
                   <img 
                     src={post.image} 
                     alt={post.title} 
-                    loading="lazy"
+                    loading="eager"
+                    decoding="async"
+                    width="500"
+                    height="281"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />

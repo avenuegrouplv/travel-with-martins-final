@@ -108,6 +108,9 @@ export default function About() {
               <img
                 src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format,webp&fit=crop&w=500&q=70"
                 alt="Travel with Martins"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>
