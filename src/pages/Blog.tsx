@@ -211,9 +211,9 @@ export default function Blog() {
                 </div>
                 <div className="p-4.5 space-y-2.5 flex-1 flex flex-col justify-between">
                   <div className="space-y-1.5">
-                    <h4 className="font-display font-bold text-sm text-[#0D1B2A] group-hover:text-[#D4AF37] transition-colors line-clamp-2 leading-snug">
+                    <h3 className="font-display font-bold text-sm text-[#0D1B2A] group-hover:text-[#D4AF37] transition-colors line-clamp-2 leading-snug">
                       {post.title}
-                    </h4>
+                    </h3>
                     <p className="text-[11px] text-[#5A5854] leading-relaxed line-clamp-3">
                       {post.desc}
                     </p>

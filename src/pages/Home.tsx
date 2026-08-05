@@ -458,11 +458,16 @@ export default function Home() {
               <button
                 key={idx}
                 onClick={() => setCurrentSlide(idx)}
-                className={`h-3 rounded-full transition-all duration-300 ${
-                  idx === currentSlide ? "bg-[#D4AF37] w-8" : "bg-white/40 hover:bg-white w-3"
-                }`}
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 cursor-pointer focus:outline-none"
+                aria-label={`Slaids ${idx + 1}`}
                 title={`Slaids ${idx + 1}`}
-              />
+              >
+                <span
+                  className={`h-3 rounded-full transition-all duration-300 block ${
+                    idx === currentSlide ? "bg-[#D4AF37] w-8" : "bg-white/40 hover:bg-white w-3"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>
@@ -819,7 +824,7 @@ export default function Home() {
                   </div>
                   <div className="pt-3 border-t border-[#F2ECE0] flex items-center justify-between">
                     <div>
-                      <span className="text-[9px] text-[#8C8A84] block font-bold uppercase tracking-wider leading-none">
+                      <span className="text-[9px] text-[#52504B] block font-bold uppercase tracking-wider leading-none">
                         {lang === "LV" ? "Ilgums" : lang === "EN" ? "Duration" : "Длительность"}
                       </span>
                       <span className="text-xs font-semibold text-[#0D1B2A]">{transItem.duration}</span>
@@ -897,14 +902,14 @@ export default function Home() {
                 </div>
                 <div className="p-5 space-y-2.5 flex-1 flex flex-col justify-between">
                   <div className="space-y-1.5">
-                    <h4 className="font-display font-bold text-sm sm:text-base text-[#0D1B2A] group-hover:text-[#D4AF37] transition-colors line-clamp-2 leading-snug">
+                    <h3 className="font-display font-bold text-sm sm:text-base text-[#0D1B2A] group-hover:text-[#D4AF37] transition-colors line-clamp-2 leading-snug">
                       {post.title}
-                    </h4>
+                    </h3>
                     <p className="text-xs text-[#5A5854] leading-relaxed line-clamp-2">
                       {post.desc}
                     </p>
                   </div>
-                  <div className="pt-3 border-t border-[#F2ECE0] flex items-center justify-between text-[10px] text-[#8C8A84] font-bold">
+                  <div className="pt-3 border-t border-[#F2ECE0] flex items-center justify-between text-[10px] text-[#52504B] font-bold">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-3 h-3 text-[#D4AF37]" />
                       <span>{lang === "LV" ? "Jūlijs, 2026" : lang === "EN" ? "July, 2026" : "Июль, 2026"}</span>
@@ -1004,24 +1009,14 @@ export default function Home() {
 
       {/* 9. Noslēguma aicinājuma bloks ar fona video */}
       <section className="relative w-full py-20 px-6 overflow-hidden flex items-center justify-center bg-[#0D1B2A] text-white text-center">
-        {/* Fona video bez poster atribūta - ātrākai un nepiespiestai ielādei */}
-        <video
-          ref={videoRef}
-          autoPlay={true}
-          loop={true}
-          muted={true}
-          playsInline={true}
-          preload="auto"
-          disablePictureInPicture={true}
-          controls={false}
-          controlsList="nodownload nofullscreen noremoteplayback"
-          className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none opacity-85"
-        >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-drone-view-of-a-tropical-beach-and-turquoise-water-43110-large.mp4" type="video/mp4" />
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-beautiful-tropical-beach-with-palm-trees-14300-large.mp4" type="video/mp4" />
-          <source src="https://cdn.coverr.co/videos/sfco-1581457816174/1080p.mp4" type="video/mp4" />
-          {lang === "LV" ? "Tava pārlūkprogramma neatbalsta video elementu." : lang === "EN" ? "Your browser does not support the video tag." : "Ваш браузер не поддерживает видео."}
-        </video>
+        {/* High-performance optimized background image overlay */}
+        <img
+          src="/celo-vairak-veido-dzivi-brivaku.webp"
+          alt="Travel with Martins Background"
+          loading="lazy"
+          decoding="async"
+          className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none opacity-40"
+        />
 
         {/* Caurspīdīgāks pārklājums kontrastam un augstai video redzamībai */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A]/70 via-[#0D1B2A]/40 to-[#0D1B2A]/20 z-10" />
