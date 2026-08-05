@@ -36,50 +36,24 @@ import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../translations";
 import parManiPng from "../par-mani.png";
 
-const HERO_SLIDES: Array<{
+const HERO_IMAGES: Array<{
   image: string;
-  text: string;
-  highlights: string[];
   positionClass?: string;
 }> = [
-  /* Pirmie divi attēli pagaidām noņemti no redzamības, bet saglabāti:
   {
-    image: "https://pub-5eb70b89ca2248c8bdc564aeb0e101f5.r2.dev/background2.webp",
-    text: "Atklāj pasaules skaistākās vietas ar personīgu atbalstu",
-    highlights: ["skaistākās", "atbalstu"],
-    positionClass: "max-sm:object-[68%_center] object-center"
+    image: "https://pub-5eb70b89ca2248c8bdc564aeb0e101f5.r2.dev/background3.webp"
   },
   {
-    image: "https://pub-5eb70b89ca2248c8bdc564aeb0e101f5.r2.dev/background1.webp",
-    text: "Dzīvo brīvāk, ceļo gudrāk un pieņem savus lēmumus pats",
-    highlights: ["brīvāk", "gudrāk", "pats"],
-    positionClass: "max-sm:object-[72%_center] object-center"
-  },
-  */
-  {
-    image: "https://pub-5eb70b89ca2248c8bdc564aeb0e101f5.r2.dev/background3.webp",
-    text: "Sasniedz vairāk un veido savu dzīves ceļu ar jaunu aizrautību",
-    highlights: ["vairāk", "aizrautību"]
+    image: "https://pub-5eb70b89ca2248c8bdc564aeb0e101f5.r2.dev/background4.webp"
   },
   {
-    image: "https://pub-5eb70b89ca2248c8bdc564aeb0e101f5.r2.dev/background4.webp",
-    text: "Paplašini redzesloku un iegūsti jaunas iespējas nākotnei",
-    highlights: ["redzesloku", "iespējas", "nākotnei"]
+    image: "https://pub-5eb70b89ca2248c8bdc564aeb0e101f5.r2.dev/background5.webp"
   },
   {
-    image: "https://pub-5eb70b89ca2248c8bdc564aeb0e101f5.r2.dev/background5.webp",
-    text: "Baudi neatkārtojamus mirkļus un gūsti neaizmirstamu pieredzi",
-    highlights: ["neatkārtojamus", "neaizmirstamu"]
+    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format,webp&fit=crop&w=1200&q=70"
   },
   {
-    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format,webp&fit=crop&w=1200&q=70",
-    text: "Sasniedz vairāk un veido savu dzīves ceļu ar jaunu aizrautību",
-    highlights: ["vairāk", "aizrautību"]
-  },
-  {
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format,webp&fit=crop&w=1200&q=70",
-    text: "Paplašini redzesloku un iegūsti jaunas iespējas nākotnei",
-    highlights: ["redzesloku", "iespējas", "nākotnei"]
+    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format,webp&fit=crop&w=1200&q=70"
   }
 ];
 
@@ -328,21 +302,31 @@ export default function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => {
-        const next = (prev + 1) % HERO_SLIDES.length;
-        setLoadedSlides(loaded => Array.from(new Set([...loaded, next, (next + 1) % HERO_SLIDES.length])));
+        const next = (prev + 1) % HERO_IMAGES.length;
+        setLoadedSlides(loaded => Array.from(new Set([...loaded, next, (next + 1) % HERO_IMAGES.length])));
         return next;
       });
-    }, 5000);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
+
+  const activeSlideData = t.home.heroSlides[currentSlide] || t.home.heroSlides[0];
+
+  const handleSlideNavigation = (targetId?: string) => {
+    if (!targetId) return;
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="bg-[#F7F7F7] min-h-screen">
       {/* 1. Hero Section: Slideshow with texts */}
-      <section className="relative h-[90vh] md:h-screen flex items-start justify-center overflow-hidden bg-[#0D1B2A] pt-36 sm:pt-44 md:pt-48">
+      <section className="relative min-h-[92vh] md:min-h-screen flex flex-col justify-between overflow-hidden bg-[#0D1B2A] pt-32 sm:pt-40 md:pt-44 pb-20">
         {/* Background Images with smooth, flicker-free crossfade */}
         <div className="absolute inset-0 z-0">
-          {HERO_SLIDES.map((slide, idx) => {
+          {HERO_IMAGES.map((slide, idx) => {
             const isActive = idx === currentSlide;
             const isLoaded = loadedSlides.includes(idx);
             if (!isLoaded) return null;
@@ -363,11 +347,11 @@ export default function Home() {
               />
             );
           })}
-          {/* Subtle background dimming to keep text readable without a banner */}
-          <div className="absolute inset-0 bg-[#0D1B2A]/40 pointer-events-none" />
+          {/* Subtle background dimming overlay for perfect contrast */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0D1B2A]/70 via-[#0D1B2A]/50 to-[#0D1B2A]/85 pointer-events-none" />
         </div>
 
-        {/* Top-right Contact Info Bar - shifted up */}
+        {/* Top-right Contact Info Bar */}
         <div className="absolute top-14 sm:top-20 right-6 md:right-12 z-20 flex flex-col sm:flex-row gap-1.5 sm:gap-3 items-end sm:items-center">
           <a 
             href="tel:+37127061369" 
@@ -396,69 +380,78 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Hero Content Overlay */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white flex flex-col items-center">
+        {/* Hero Content Overlay (Text & Button aligned) */}
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white flex flex-col items-center my-auto pt-4">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
-              className="w-full max-w-3xl space-y-4 flex flex-col items-center"
+              transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1] }}
+              className="w-full space-y-5 flex flex-col items-center"
             >
-              <span className="bg-[#D4AF37] text-[#0D1B2A] text-[9px] md:text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full shadow-md inline-block">
+              <span className="bg-[#D4AF37] text-[#0D1B2A] text-[9px] md:text-[10px] font-black tracking-widest uppercase px-3.5 py-1 rounded-full shadow-md inline-block">
                 Travel with Martins
               </span>
               
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-black tracking-tight leading-[1.2] uppercase text-center drop-shadow-xl">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-black tracking-tight leading-[1.2] uppercase text-center max-w-4xl [text-shadow:_-1.5px_-1.5px_0_#000,_1.5px_-1.5px_0_#000,_-1.5px_1.5px_0_#000,_1.5px_1.5px_0_#000,_0_4px_12px_rgba(0,0,0,0.9)]">
                 {renderHighlightedText(
-                  t.home.heroSlides[currentSlide]?.text || "",
-                  t.home.heroSlides[currentSlide]?.highlights || []
+                  activeSlideData.text || "",
+                  activeSlideData.highlights || []
                 )}
               </h1>
+
+              {activeSlideData.subtitle && (
+                <p className="text-sm sm:text-base md:text-lg text-white/95 font-medium max-w-2xl mx-auto leading-relaxed [text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000,_0_2px_8px_rgba(0,0,0,0.8)]">
+                  {activeSlideData.subtitle}
+                </p>
+              )}
               
-              <div className="w-12 h-0.5 bg-[#D4AF37] mx-auto opacity-80" />
+              <div className="w-16 h-0.5 bg-[#D4AF37] mx-auto opacity-80 my-2" />
+
+              {/* Both Hero Action Buttons placed side by side with identical dimensions & location */}
+              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+                {/* 1. Slide Navigation Button */}
+                <button
+                  onClick={() => handleSlideNavigation((activeSlideData as any).targetId)}
+                  className="w-64 h-14 bg-[#D4AF37] text-[#0D1B2A] font-bold text-xs uppercase tracking-widest rounded-none hover:bg-white hover:text-[#0D1B2A] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xl border border-[#D4AF37] flex-shrink-0"
+                >
+                  <span>{activeSlideData.buttonText || (lang === "LV" ? "Atklāj vairāk" : lang === "EN" ? "Discover more" : "Узнать больше")}</span>
+                  <ArrowRight className="w-4 h-4 flex-shrink-0" />
+                </button>
+
+                {/* 2. Static Zoom Presentation Button (constant across all slides) */}
+                <button
+                  onClick={() => {
+                    const target = document.getElementById("sazina");
+                    if (target) target.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="w-64 h-14 bg-white/10 border border-white/30 text-white font-bold text-xs uppercase tracking-widest rounded-none hover:bg-white hover:text-[#0D1B2A] transition-all flex items-center justify-center gap-2 shadow-xl cursor-pointer flex-shrink-0"
+                >
+                  <span>{lang === "LV" ? "Pieteikties Zoom prezentācijai" : lang === "EN" ? "Apply for Zoom presentation" : "Записаться на презентацию Zoom"}</span>
+                  <ArrowRight className="w-4 h-4 flex-shrink-0" />
+                </button>
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>
 
-        {/* Constant buttons on the left side of the background images */}
-        <div className="absolute bottom-24 left-6 md:left-12 z-20 flex flex-col sm:flex-row gap-4">
-          <button
-            onClick={() => {
-              const target = document.getElementById("sadarbiba-section");
-              if (target) target.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="px-8 py-4 bg-[#D4AF37] text-[#0D1B2A] font-bold text-xs uppercase tracking-widest rounded-none hover:bg-white hover:text-[#0D1B2A] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg"
-          >
-            <span>{lang === "LV" ? "Uzzini, kā tas darbojas" : lang === "EN" ? "Find out how it works" : "Узнайте, как это работает"}</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-          <button
-            onClick={() => {
-              const target = document.getElementById("sazina");
-              if (target) target.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="px-8 py-4 bg-white/10 border border-white/30 text-white font-bold text-xs uppercase tracking-widest rounded-none hover:bg-white hover:text-[#0D1B2A] transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer animate-pulse hover:animate-none"
-          >
-            <span>{lang === "LV" ? "Pieteikties Zoom prezentācijai" : lang === "EN" ? "Apply for Zoom presentation" : "Записаться на презентацию Zoom"}</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
-
-        {/* Slide dots indicators in the bottom-right corner on mobile, bottom-left on desktop */}
-        <div className="absolute bottom-16 right-6 sm:bottom-10 sm:left-6 sm:right-auto md:left-12 z-20 flex space-x-2">
-          {HERO_SLIDES.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentSlide(idx)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                idx === currentSlide ? "bg-[#D4AF37] w-8" : "bg-white/40 hover:bg-white"
-              }`}
-              title={`Slaids ${idx + 1}`}
-            />
-          ))}
+        {/* Bottom Bar: Slide indicators */}
+        <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 w-full flex items-center justify-center sm:justify-start mt-6">
+          {/* Slide dots indicators */}
+          <div className="flex space-x-2.5 items-center">
+            {HERO_IMAGES.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-3 rounded-full transition-all duration-300 ${
+                  idx === currentSlide ? "bg-[#D4AF37] w-8" : "bg-white/40 hover:bg-white w-3"
+                }`}
+                title={`Slaids ${idx + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
       </section>
@@ -560,7 +553,7 @@ export default function Home() {
       </section>
 
       {/* 4.2. Vai atpazīsti sevi (pārnesta virs Sadarbības process) */}
-      <section className="py-8 px-6 max-w-7xl mx-auto">
+      <section id="pardomam" className="py-8 px-6 max-w-7xl mx-auto scroll-mt-24">
         <div className="p-8 md:p-12 rounded-3xl border border-[#EAE6DD] space-y-8 shadow-sm bg-gradient-to-b from-[#D4AF37] to-white">
           <div className="space-y-2 text-center">
             <span className="text-xs font-bold text-[#0D1B2A]/70 uppercase tracking-wider block">
@@ -659,7 +652,7 @@ export default function Home() {
       </section>
 
       {/* 4.1. Kādas priekšrocības dod ceļošana */}
-      <section className="py-8 px-6 max-w-7xl mx-auto">
+      <section id="ieguvumi-iespejas" className="py-8 px-6 max-w-7xl mx-auto scroll-mt-24">
         <div className="bg-white border border-[#EAE6DD] p-8 md:p-12 rounded-3xl space-y-10 relative overflow-hidden shadow-sm">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4AF37]/5 rounded-full blur-3xl -z-10" />
 
@@ -705,7 +698,7 @@ export default function Home() {
       </section>
 
       {/* 7.5 Kāpēc cilvēki izvēlas sadarboties ar mani? (Pārvietots un stilizēts unikāli virs Galamērķiem) */}
-      <section className="py-8 px-6 max-w-7xl mx-auto">
+      <section id="pieeja-principi" className="py-8 px-6 max-w-7xl mx-auto scroll-mt-24">
         <div className="bg-gradient-to-br from-[#FAF9F5] to-[#F2ECE0] border border-[#D4AF37]/30 p-8 md:p-12 rounded-3xl space-y-10 relative overflow-hidden shadow-sm">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4AF37]/5 rounded-full blur-3xl -z-10" />
           

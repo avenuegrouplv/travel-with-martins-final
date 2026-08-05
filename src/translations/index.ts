@@ -16,6 +16,8 @@ export interface TranslationSchema {
     heroSlides: {
       title: string;
       text: string;
+      subtitle?: string;
+      buttonText?: string;
       highlights: string[];
     }[];
     quickStats: {

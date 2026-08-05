@@ -12,29 +12,44 @@
   "home": {
     "heroSlides": [
       {
-        "title": "Ceļo patstāvīgi un nopelni",
-        "text": "Sāc ceļot patstāvīgi un veido savu brīvo dzīvesveidu ar papildu ienākumiem",
-        "highlights": ["ceļot patstāvīgi", "brīvo dzīvesveidu", "papildu ienākumiem"]
+        "title": "1. slaids",
+        "text": "CEĻOŠANA NAV TIKAI ATPŪTA. TĀ VAR KĻŪT PAR DZĪVESVEIDU",
+        "subtitle": "Travel With Martins ir vieta cilvēkiem, kuri vēlas ceļot gudrāk, izmantot savas iespējas pilnvērtīgāk un soli pa solim veidot dzīvi ar vairāk brīvības",
+        "buttonText": "Atklāj vairāk",
+        "targetId": "pieeja-principi",
+        "highlights": ["CEĻOŠANA", "DZĪVESVEIDU"]
       },
       {
-        "title": "Dzīvesveida maiņa",
-        "text": "Atklāj, kā ceļošanu pārvērst par savu dzīvesveidu un reālu papildu ienākumu avotu",
-        "highlights": ["dzīvesveidu", "papildu ienākumu"]
+        "title": "2. slaids",
+        "text": "LIELĀKĀ DAĻA CILVĒKU PĀRMAKSĀ PAR CEĻOJUMIEM, PAŠI TO NEZINOT",
+        "subtitle": "Daudzi domā, ka vairāk ceļot var tikai tad, ja pelna vairāk. Patiesībā bieži izšķiroša ir informācija, gudrāki lēmumi un pieejamās iespējas",
+        "buttonText": "Uzzini vairāk",
+        "targetId": "pardomam",
+        "highlights": ["PĀRMAKSĀ", "NEZINOT"]
       },
       {
-        "title": "Personīgs mentorings",
-        "text": "Saņem personīgu mentora atbalstu, lai ceļotu patstāvīgi un veidotu savu biznesu",
-        "highlights": ["mentora atbalstu", "savu biznesu"]
+        "title": "3. slaids",
+        "text": "CEĻOT BIEŽĀK NENOZĪMĒ TĒRĒT VAIRĀK",
+        "subtitle": "Es dalos ar pieredzi un risinājumiem, kas palīdz ceļot izdevīgāk, ietaupīt un atklāt iespējas, kuras daudzi nemaz nezina",
+        "buttonText": "Atklāj iespējas",
+        "targetId": "ieguvumi-iespejas",
+        "highlights": ["BIEŽĀK", "TĒRĒT"]
       },
       {
-        "title": "Brīvība bez robežām",
-        "text": "Pievienojies kopienai, lai kopā ceļotu bez robežām, gūtu brīvību un pelnītu patstāvīgi",
-        "highlights": ["Pievienojies kopienai", "bez robežām", "pelnītu patstāvīgi"]
+        "title": "4. slaids",
+        "text": "BRĪVĪBA NESĀKAS TAD, KAD KĻŪSI BAGĀTS. TĀ SĀKAS AR GUDRĀKIEM LĒMUMIEM",
+        "subtitle": "Vairāk laika sev un ģimenei. Vairāk ceļojumu. Vairāk iespēju. Dzīve, kurā Tu pats vari izvēlēties savu virzienu",
+        "buttonText": "Sāc savu ceļu",
+        "targetId": "pieeja-principi",
+        "highlights": ["BRĪVĪBA", "GUDRĀKIEM"]
       },
       {
-        "title": "Finansiāla neatkarība",
-        "text": "Lauz aizspriedumus par dārgu atpūtu un dodies savā ceļā uz finansiālu brīvību",
-        "highlights": ["Lauz aizspriedumus", "finansiālu brīvību"]
+        "title": "5. slaids",
+        "text": "KATRS LIELS CEĻOJUMS SĀKAS AR PIRMO SOLI",
+        "subtitle": "Ja arī Tu vēlies ceļot gudrāk, atklāt jaunas iespējas un soli pa solim veidot brīvāku dzīvesveidu, priecāšos dalīties savā pieredzē",
+        "buttonText": "Sper pirmo soli",
+        "targetId": "sadarbiba-section",
+        "highlights": ["CEĻOJUMS", "PIRMO"]
       }
     ],
     "quickStats": {

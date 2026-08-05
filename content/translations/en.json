@@ -12,29 +12,44 @@
   "home": {
     "heroSlides": [
       {
-        "title": "Travel Independently & Earn",
-        "text": "Start traveling independently and build your free lifestyle with additional income",
-        "highlights": ["travel independently", "free lifestyle", "additional income"]
+        "title": "Slide 1",
+        "text": "TRAVEL IS NOT JUST REST. IT CAN BECOME A LIFESTYLE",
+        "subtitle": "Travel With Martins is a place for people who want to travel smarter, use their opportunities more fully and step by step build a life with more freedom",
+        "buttonText": "Discover more",
+        "targetId": "pieeja-principi",
+        "highlights": ["TRAVEL", "LIFESTYLE"]
       },
       {
-        "title": "Lifestyle Change",
-        "text": "Discover how to turn traveling into your lifestyle and a real source of additional income",
-        "highlights": ["lifestyle", "additional income"]
+        "title": "Slide 2",
+        "text": "MOST PEOPLE OVERPAY FOR TRAVEL WITHOUT KNOWING IT",
+        "subtitle": "Many think that you can only travel more if you earn more. In reality, information, smarter decisions and available opportunities are often key",
+        "buttonText": "Learn more",
+        "targetId": "pardomam",
+        "highlights": ["OVERPAY", "KNOWING"]
       },
       {
-        "title": "Personal Mentorship",
-        "text": "Receive personal mentor support to travel independently and build your own business",
-        "highlights": ["mentor support", "build your own business"]
+        "title": "Slide 3",
+        "text": "TRAVELING MORE OFTEN DOES NOT MEAN SPENDING MORE",
+        "subtitle": "I share experience and solutions that help travel more cost-effectively, save and discover opportunities that many do not even know",
+        "buttonText": "Discover opportunities",
+        "targetId": "ieguvumi-iespejas",
+        "highlights": ["MORE OFTEN", "SPENDING MORE"]
       },
       {
-        "title": "Freedom Without Borders",
-        "text": "Join the community to travel without borders, gain freedom and earn independently",
-        "highlights": ["Join the community", "without borders", "earn independently"]
+        "title": "Slide 4",
+        "text": "FREEDOM DOES NOT START WHEN YOU BECOME RICH. IT STARTS WITH SMARTE DECISIONS",
+        "subtitle": "More time for yourself and family. More trips. More opportunities. A life where you can choose your own direction",
+        "buttonText": "Start your path",
+        "targetId": "pieeja-principi",
+        "highlights": ["FREEDOM", "SMARTER"]
       },
       {
-        "title": "Financial Independence",
-        "text": "Break prejudices about expensive leisure and embark on your path to financial freedom",
-        "highlights": ["Break prejudices", "financial freedom"]
+        "title": "Slide 5",
+        "text": "EVERY GREAT JOURNEY STARTS WITH THE FIRST STEP",
+        "subtitle": "If you also want to travel smarter, discover new opportunities and step by step build a freer lifestyle, I'll be happy to share my experience",
+        "buttonText": "Take the first step",
+        "targetId": "sadarbiba-section",
+        "highlights": ["JOURNEY", "FIRST STEP"]
       }
     ],
     "quickStats": {
