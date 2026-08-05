@@ -11,11 +11,11 @@ interface SEOMetadata {
 const seoData: Record<"LV" | "EN" | "RU", Record<string, SEOMetadata>> = {
   LV: {
     "/": {
-      title: "Ceļo patstāvīgi un nopelni | Travel with Martins",
-      description: "Mācies ceļot patstāvīgi, izvēlēties izdevīgākos galamērķus un veidot savu brīvo dzīvesveidu ar personīgu mentora atbalstu. Sāc jau šodien!",
+      title: "Ceļošana kā dzīvesveids I Travel with Martins",
+      description: "Ceļo patstāvīgi, izvēlies izdevīgākos galamērķus un veido savu jauno dzīvesveidu ar personīgā mentora atbalstu. Sāc jau šodien!",
     },
     "/par-mani": {
-      title: "Par mani - Ceļo patstāvīgi un nopelni | Travel with Martins",
+      title: "Par mani - Ceļošana kā dzīvesveids | Travel with Martins",
       description: "Esmu radījis projektu Travel with Martins, kurā es palīdzu cilvēkiem mainīt dzīvesveidu un ceļot vairāk ar mentora atbalstu.",
     },
     "/sadarbiba": {
