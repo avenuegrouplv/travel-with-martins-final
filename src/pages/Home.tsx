@@ -29,7 +29,6 @@ import StatsCounter from "../components/StatsCounter";
 import ReviewsCarousel from "../components/ReviewsCarousel";
 import SocialMedia from "../components/SocialMedia";
 import ContactForm from "../components/ContactForm";
-import CookieConsent from "../components/CookieConsent";
 import { POPULAR_DESTINATIONS } from "../data/destinations";
 import { MAIN_LOGO_BASE64 } from "../logo-base64";
 import { useLanguage } from "../context/LanguageContext";
@@ -1064,9 +1063,6 @@ export default function Home() {
 
       {/* 10. Kontakti un saziņas forma */}
       <ContactForm />
-
-      {/* Sīkdatņu paziņojuma logs */}
-      <CookieConsent />
     </div>
   );
 }

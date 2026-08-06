@@ -771,6 +771,10 @@
 
 @import "tailwindcss";
 
+html {
+  font-size: 15px;
+}
+
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;

@@ -128,7 +128,7 @@ export default function CookieConsent() {
     <>
       <AnimatePresence>
         {isVisible && (
-          <div className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 md:p-8 flex justify-center pointer-events-none">
+          <div className="fixed bottom-0 left-0 right-0 z-[9999] p-4 sm:p-6 md:p-8 flex justify-center pointer-events-none">
             <motion.div
               initial={{ y: "150%", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}

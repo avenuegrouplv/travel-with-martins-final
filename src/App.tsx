@@ -9,6 +9,7 @@ import FAQ from "./pages/FAQ";
 import Blog from "./pages/Blog";
 import ContactPage from "./pages/ContactPage";
 import CookiePolicy from "./pages/CookiePolicy";
+import CookieConsent from "./components/CookieConsent";
 import { LanguageProvider } from "./context/LanguageContext";
 import SEO from "./components/SEO";
 
@@ -44,6 +45,9 @@ export default function App() {
 
           {/* Footer block with quick-links, follow buttons and policy modals */}
           <Footer />
+          
+          {/* Global Cookie Consent popup */}
+          <CookieConsent />
         </div>
       </Router>
     </LanguageProvider>
