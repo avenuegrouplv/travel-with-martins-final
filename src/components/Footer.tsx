@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Youtube, Instagram, Phone, Mail } from "lucide-react";
 import CookiePolicyModal from "./CookiePolicyModal";
@@ -10,8 +10,29 @@ import { translations } from "../translations";
 export default function Footer() {
   const [cookieOpen, setCookieOpen] = useState(false);
   const [privacyOpen, setPrivacyOpen] = useState(false);
+  const [isAtBottom, setIsAtBottom] = useState(false);
   const { lang } = useLanguage();
   const t = translations[lang];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+      const scrollY = window.scrollY || window.pageYOffset;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      // Detektē kad lapa ir noskrollēta pašā apakšā (250px robežās no apakšas)
+      if (windowHeight + scrollY >= documentHeight - 250) {
+        setIsAtBottom(true);
+      } else {
+        setIsAtBottom(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navigationLinks = [
     { name: t.header.home, path: "/" },
@@ -126,6 +147,8 @@ export default function Footer() {
                 travelwithmartinss@gmail.com
               </a>
             </div>
+
+
           </div>
         </div>
       </div>
@@ -158,22 +181,46 @@ export default function Footer() {
           </button>
         </div>
 
-        {/* Labā puse: Izstrādātājs un saite uz SageOn */}
+        {/* Labā puse: Izstrādātājs un saite uz Sageon Media */}
         <div className="flex items-center justify-center md:justify-end gap-2 md:col-span-3">
           <span className="text-xs">
             {lang === "LV" ? "Izstrādātājs:" : lang === "EN" ? "Developer:" : "Разработчик:"}
           </span>
           <a
-            href="https://www.facebook.com/profile.php?id=100088834779537"
+            href="https://sageonmedia.eu"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-semibold text-[#D4AF37] hover:text-white hover:underline transition-all cursor-pointer z-10"
-            title="SageOn Facebook"
+            title="Sageon Media"
           >
-            SageOn
+            Sageon Media
           </a>
         </div>
       </div>
+
+      {/* Mobilās versijas fiksētā kontaktu josla ekrāna apakšā skrollējot līdz lapas beigām */}
+      {isAtBottom && (
+        <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 p-3 bg-[#0D1B2A]/95 backdrop-blur-md border-t border-[#D4AF37]/40 shadow-2xl flex items-center gap-2.5 animate-in slide-in-from-bottom duration-300">
+          <a
+            href="tel:+37127061369"
+            className="flex-1 bg-[#D4AF37] text-[#0D1B2A] font-bold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 text-xs shadow-lg active:scale-95 transition-all"
+          >
+            <Phone className="w-3.5 h-3.5 text-[#0D1B2A]" />
+            <span className="truncate">+371 27061369</span>
+          </a>
+          <a
+            href="https://wa.me/37127061369"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 bg-[#25D366] text-white font-bold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 text-xs shadow-lg active:scale-95 transition-all"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-white fill-current">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.023-5.115-2.887-6.978C16.584 1.9 14.111.875 11.487.875c-5.44 0-9.865 4.42-9.869 9.861-.001 1.761.464 3.48 1.346 5.011l-.984 3.591 3.678-.964zm11.233-5.97c-.3-.149-1.772-.875-2.046-.975-.276-.101-.476-.149-.676.149-.2.3-.775.976-.95 1.174-.175.2-.35.224-.65.074-1.208-.603-2.003-1.063-2.784-2.404-.207-.356-.02-.207.163-.521.183-.314.09-.548-.045-.697-.135-.135-1.01-2.433-1.383-3.33-.364-.874-.736-.755-.138-.857c.22-.041.44-.092.518-.092s.149.02.276.149c.125.127.525 1.275.575 1.373.05.1.082.215.015.348-.067.135-.1.224-.2.348-.1.127-.21.284-.3.38-.1.1-.205.21-.09.41.436.758 1.011 1.393 1.696 1.887.834.6 1.547.888 2.11 1.015.3.067.575.045.795.012.24-.035.74-.303.844-.597.104-.294.104-.548.073-.597-.033-.05-.125-.08-.425-.23z"/>
+            </svg>
+            <span className="truncate">WhatsApp</span>
+          </a>
+        </div>
+      )}
 
       {/* Modālie logi */}
       <CookiePolicyModal isOpen={cookieOpen} onClose={() => setCookieOpen(false)} />

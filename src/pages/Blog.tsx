@@ -218,7 +218,7 @@ export default function Blog() {
                       {post.desc}
                     </p>
                   </div>
-                  <div className="pt-3 border-t border-[#F2ECE0] flex items-center justify-between text-[9px] text-[#8C8A84] font-bold">
+                  <div className="pt-3 border-t border-[#F2ECE0] flex items-center justify-between text-[9px] text-[#52504B] font-bold">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-3 h-3 text-[#D4AF37]" />
                       <span>{lang === "LV" ? "Jūlijs, 2026" : lang === "EN" ? "July, 2026" : "Июль, 2026"}</span>

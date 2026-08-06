@@ -81,25 +81,25 @@ const HELPFUL_TIPS_DATA = [
   {
     title: "Kā saplānot ceļojumu uz Turciju un ietaupīt līdz pat 30%?",
     category: "Ceļvedis",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=500&q=75",
+    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=380&q=70",
     desc: "Praktiski padomi, kā piemeklēt izdevīgākās viesnīcas un lidojumus, un kādas kļūdas nepieļaut rezervācijas laikā."
   },
   {
     title: "5 lietas, ko ņemt vērā, pirmo reizi dodoties uz eksotisko Taizemi",
     category: "Padomi",
-    image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=500&q=75",
+    image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=380&q=70",
     desc: "No vietējās kultūras etiķetes līdz drošības pasākumiem un labākajiem ēdienu tirdziņiem. Sagatavojies savam Āzijas piedzīvojumam."
   },
   {
     title: "Maldīvu salas vai Dominikāna: kuru tropu kūrortu izvēlēties?",
     category: "Apskats",
-    image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=500&q=75",
+    image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=380&q=70",
     desc: "Salīdzinām cenas, pludmales, aktivitāšu klāstu un dabu, lai palīdzētu Tev izvēlēties piemērotāko paradīzes nostūri."
   },
   {
     title: "Kā ceļošana maina cilvēka domāšanu un paplašina dzīves redzesloku",
     category: "Pieredze",
-    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=500&q=75",
+    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=380&q=70",
     desc: "Dalos savā personīgajā pieredzē, kā jaunu kultūru un cilvēku iepazīšana palīdz iegūt iekšēju brīvību un mainīt skatījumu uz pasauli."
   }
 ];
@@ -111,7 +111,6 @@ export default function Home() {
   const t = translations[lang];
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [loadedSlides, setLoadedSlides] = useState<number[]>([0, 1, 2, 3, 4]);
   const [openFaqId, setOpenFaqId] = useState<number | null>(null);
   const [selectedDestinationId, setSelectedDestinationId] = useState<string | null>(null);
   const [selectedTipIndex, setSelectedTipIndex] = useState<number | null>(null);
@@ -212,50 +211,50 @@ export default function Home() {
     {
       title: "How to plan a trip to Turkey and save up to 30%?",
       category: "Guide",
-      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=500&q=75",
+      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=380&q=70",
       desc: "Practical tips on how to find the best hotels and flights, and what mistakes to avoid during booking."
     },
     {
       title: "5 things to consider when traveling to exotic Thailand for the first time",
       category: "Tips",
-      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=500&q=75",
+      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=380&q=70",
       desc: "From local cultural etiquette to safety measures and the best food markets. Prepare for your Asian adventure."
     },
     {
       title: "Maldives or Dominican Republic: which tropical resort to choose?",
       category: "Review",
-      image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=500&q=75",
+      image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=380&q=70",
       desc: "We compare prices, beaches, range of activities, and nature to help you choose your ideal piece of paradise."
     },
     {
       title: "How traveling changes a person's thinking and expands life horizons",
       category: "Experience",
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=500&q=75",
+      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=380&q=70",
       desc: "I share my personal experience on how meeting new cultures and people helps gain inner freedom and change your perspective on the world."
     }
   ] : [
     {
       title: "Как спланировать поездку в Турцию и сэкономить до 30%?",
       category: "Руководство",
-      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=500&q=75",
+      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=380&q=70",
       desc: "Практические советы о том, как найти лучшие отели и авиабилеты, и каких ошибок избегать при бронировании."
     },
     {
       title: "5 вещей, которые нужно учесть при первой поездке в экзотический Таиланд",
       category: "Советы",
-      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=500&q=75",
+      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=380&q=70",
       desc: "От местного культурного этикета до мер безопасности и лучших продовольственных рынков. Подготовьтесь к своему азиатскому приключению."
     },
     {
       title: "Мальдивы или Доминикана: какой тропический курорт выбрать?",
       category: "Обзор",
-      image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=500&q=75",
+      image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=380&q=70",
       desc: "Сравниваем цены, пляжи, выбор развлечений и природу, чтобы помочь вам выбрать идеальный уголок рая."
     },
     {
       title: "Как путешествия меняют мышление человека и расширяют жизненный кругозор",
       category: "Опыт",
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=500&q=75",
+      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=380&q=70",
       desc: "Делюсь личным опытом о том, как знакомство с новыми культурами и людьми помогает обрести внутреннюю свободу и изменить взгляд на мир."
     }
   ];
@@ -292,29 +291,6 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Instantly preload and decode all background slides and consultation card images
-    HERO_IMAGES.forEach((slide) => {
-      const img = new Image();
-      img.src = slide.image;
-      if ('decode' in img) {
-        img.decode().catch(() => {});
-      }
-    });
-
-    const keyImages = [
-      "/piesakies-bezmaksas-konsultacijai-ar-martinu.webp",
-      "/celo-vairak-veido-dzivi-brivaku.webp"
-    ];
-    keyImages.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-      if ('decode' in img) {
-        img.decode().catch(() => {});
-      }
-    });
-  }, []);
-
-  useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
     }, 6000);
@@ -348,10 +324,10 @@ export default function Home() {
                 loading={idx === 0 ? "eager" : "lazy"}
                 fetchPriority={idx === 0 ? "high" : "low"}
                 decoding="async"
-                className={`absolute inset-0 w-full h-full transition-all duration-[1500ms] ease-in-out object-cover ${slide.positionClass || "object-center"} ${
+                className={`absolute inset-0 w-full h-full transition-opacity duration-[1500ms] ease-in-out object-cover ${slide.positionClass || "object-center"} ${
                   isActive 
-                    ? "opacity-100 scale-100" 
-                    : "opacity-0 scale-105 pointer-events-none"
+                    ? "opacity-100" 
+                    : "opacity-0 pointer-events-none"
                 }`}
               />
             );
@@ -361,7 +337,7 @@ export default function Home() {
         </div>
 
         {/* Top-right Contact Info Bar */}
-        <div className="absolute top-14 sm:top-20 right-6 md:right-12 z-20 flex flex-col sm:flex-row gap-1.5 sm:gap-3 items-end sm:items-center">
+        <div className="absolute top-[68px] sm:top-20 right-6 md:right-12 lg:right-[420px] z-20 flex flex-col sm:flex-row gap-1.5 sm:gap-3 items-end sm:items-center">
           <a 
             href="tel:+37127061369" 
             className="flex items-center gap-2 bg-[#0D1B2A]/90 hover:bg-[#D4AF37] hover:text-[#0D1B2A] border border-white/10 px-4 py-2 rounded-full shadow-lg transition-all group font-montserrat mt-[8px] sm:mt-0"
@@ -390,7 +366,7 @@ export default function Home() {
         </div>
 
         {/* Hero Content Overlay (Text & Button aligned) */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white flex flex-col items-center my-auto pt-4">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white flex flex-col items-center my-auto pt-8 sm:pt-4">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
@@ -458,16 +434,12 @@ export default function Home() {
               <button
                 key={idx}
                 onClick={() => setCurrentSlide(idx)}
-                className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 cursor-pointer focus:outline-none"
+                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  idx === currentSlide ? "bg-[#D4AF37] w-8" : "bg-white/40 hover:bg-white w-2.5"
+                }`}
                 aria-label={`Slaids ${idx + 1}`}
                 title={`Slaids ${idx + 1}`}
-              >
-                <span
-                  className={`h-3 rounded-full transition-all duration-300 block ${
-                    idx === currentSlide ? "bg-[#D4AF37] w-8" : "bg-white/40 hover:bg-white w-3"
-                  }`}
-                />
-              </button>
+              />
             ))}
           </div>
         </div>
@@ -480,7 +452,7 @@ export default function Home() {
         {/* Virsraksts un stāsts */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37] bg-[#0D1B2A]/5 px-3 py-1 rounded inline-block">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#9E7B1D] bg-[#0D1B2A]/5 px-3 py-1 rounded inline-block">
               {t.home.aboutBadge}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black tracking-tight text-[#0D1B2A] uppercase">
@@ -679,7 +651,7 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4AF37]/5 rounded-full blur-3xl -z-10" />
 
           <div className="text-center space-y-2 max-w-2xl mx-auto">
-            <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest block">
+            <span className="text-xs font-bold text-[#9E7B1D] uppercase tracking-widest block">
               {lang === "LV" ? "Ieguvumi un iespējas" : lang === "EN" ? "Benefits and Opportunities" : "Преимущества и возможности"}
             </span>
             <h2 className="text-2xl md:text-3xl font-display font-bold text-[#0D1B2A] tracking-tight uppercase">
@@ -725,7 +697,7 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4AF37]/5 rounded-full blur-3xl -z-10" />
           
           <div className="text-center space-y-2 max-w-2xl mx-auto">
-            <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest block">
+            <span className="text-xs font-bold text-[#9E7B1D] uppercase tracking-widest block">
               {lang === "LV" ? "Mana pieeja un principi" : lang === "EN" ? "My Approach and Principles" : "Мой подход и принципы"}
             </span>
             <h2 className="text-3xl font-display font-black text-[#0D1B2A] tracking-tight uppercase">
@@ -763,7 +735,7 @@ export default function Home() {
       {/* 5. Galamērķi Preview (Horizontālais ritināmais saraksts ar visiem galamērķiem) */}
       <section className="py-8 px-6 max-w-7xl mx-auto overflow-hidden">
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37]">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#9E7B1D]">
             {lang === "LV" ? "Piedāvājumi" : lang === "EN" ? "Offers" : "Предложения"}
           </span>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#0D1B2A] tracking-tight">
@@ -857,7 +829,7 @@ export default function Home() {
       {/* 7. Noderīgi padomi */}
       <section className="py-8 px-6 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37]">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#9E7B1D]">
             {lang === "LV" ? "Noderīgi padomi" : lang === "EN" ? "Useful Tips" : "Полезные советы"}
           </span>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#0D1B2A] tracking-tight uppercase">
@@ -889,7 +861,7 @@ export default function Home() {
                   <img 
                     src={post.image} 
                     alt={post.title} 
-                    loading="eager"
+                    loading="lazy"
                     decoding="async"
                     width="500"
                     height="281"
@@ -917,7 +889,7 @@ export default function Home() {
                     <Link 
                       to="/blogs" 
                       onClick={(e) => e.stopPropagation()}
-                      className="text-[#D4AF37] hover:underline uppercase tracking-wider text-[9px]"
+                      className="text-[#9E7B1D] font-bold hover:underline uppercase tracking-wider text-[9px]"
                     >
                       {lang === "LV" ? "Lasīt vairāk" : lang === "EN" ? "Read more" : "Читать далее"}
                     </Link>
