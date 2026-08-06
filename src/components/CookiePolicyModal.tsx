@@ -1,5 +1,6 @@
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { X, ExternalLink } from "lucide-react";
+import { X, ExternalLink, Check } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 interface ModalProps {
@@ -9,6 +10,45 @@ interface ModalProps {
 
 export default function CookiePolicyModal({ isOpen, onClose }: ModalProps) {
   const { lang } = useLanguage();
+
+  const [analytics, setAnalytics] = useState(true);
+  const [functional, setFunctional] = useState(true);
+  const [marketing, setMarketing] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      try {
+        const saved = localStorage.getItem("cookie_consent_preferences");
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          setAnalytics(!!parsed.analytics);
+          setFunctional(!!parsed.functional);
+          setMarketing(!!parsed.marketing);
+        }
+      } catch (e) {
+        console.error("Error loading cookie preferences in policy modal", e);
+      }
+    }
+  }, [isOpen]);
+
+  const handleToggle = (category: "analytics" | "functional" | "marketing") => {
+    let newAnalytics = analytics;
+    let newFunctional = functional;
+    let newMarketing = marketing;
+
+    if (category === "analytics") newAnalytics = !analytics;
+    if (category === "functional") newFunctional = !functional;
+    if (category === "marketing") newMarketing = !marketing;
+
+    setAnalytics(newAnalytics);
+    setFunctional(newFunctional);
+    setMarketing(newMarketing);
+
+    const prefs = { necessary: true, analytics: newAnalytics, functional: newFunctional, marketing: newMarketing };
+    localStorage.setItem("cookie_consent_preferences", JSON.stringify(prefs));
+    localStorage.setItem("cookie_consent", "custom");
+    localStorage.setItem("travel_cookie_consent", "custom");
+  };
 
   const renderContent = () => {
     if (lang === "LV") {
@@ -31,7 +71,7 @@ export default function CookiePolicyModal({ isOpen, onClose }: ModalProps) {
           <section className="space-y-2">
             <h4 className="font-display font-bold text-[#0D1B2A] text-lg">2. Kāpēc mēs izmantojam sīkdatnes?</h4>
             <p>
-              <strong>Travel with Martins</strong> izmanto sīkdatnes šādiem mērķiem:
+              <strong>Travel with Martins</strong> (SageOn Media) izmanto sīkdatnes šādiem mērķiem:
             </p>
             <ul className="list-disc pl-5 space-y-1">
               <li><strong>Vietnes funkcionalitātes nodrošināšanai:</strong> Lai tīmekļa vietne varētu darboties un nodrošināt pamatfunkcijas.</li>
@@ -41,19 +81,97 @@ export default function CookiePolicyModal({ isOpen, onClose }: ModalProps) {
           </section>
 
           <section className="space-y-2">
-            <h4 className="font-display font-bold text-[#0D1B2A] text-lg">3. Izmantoto sīkdatņu veidi</h4>
+            <h4 className="font-display font-bold text-[#0D1B2A] text-lg">3. Sīkdatņu kategorijas un to pielāgošana</h4>
             <div className="space-y-3">
-              <div>
-                <p className="font-bold text-[#0D1B2A]">Nepieciešamās sīkdatnes</p>
-                <p>
-                  Šīs sīkdatnes ir būtiskas, lai vietne varētu darboties. Bez tām dažas vietnes daļas var nedarboties pareizi. Tās parasti tiek iestatītas tikai reaģējot uz Jūsu veiktajām darbībām, piemēram, aizpildot kontaktformas.
+              {/* Obligātās */}
+              <div className="bg-[#FAF9F5] p-3.5 rounded-xl border border-[#EAE6DD]">
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <p className="font-bold text-[#0D1B2A]">Nepieciešamās sīkdatnes (Obligātas)</p>
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-[#0D1B2A]/10 text-[#0D1B2A] px-2 py-0.5 rounded-full whitespace-nowrap">
+                    Vienmēr aktīvas
+                  </span>
+                </div>
+                <p className="text-xs">
+                  Šīs sīkdatnes ir nepieciešamas vietnes pamata funkcijām, drošībai un nepārtrauktai darbībai (piemēram, sesijas uzturēšanai, navigācijai un kontaktformu apstrādei). Bez tām vietne nevar pareizi darboties.
                 </p>
               </div>
-              <div>
-                <p className="font-bold text-[#0D1B2A]">Analītikas sīkdatnes</p>
-                <p>
-                  Mēs izmantojam trešo pušu rīkus (piemēram, Google Analytics), lai apkopotu anonīmu informāciju par apmeklētāju skaitu un populārākajām lapām. Šie dati mums palīdz uzlabot lietotāju pieredzi.
-                </p>
+
+              {/* Analītiskās */}
+              <div className="bg-[#FAF9F5] p-3.5 rounded-xl border border-[#EAE6DD] flex items-start justify-between gap-3">
+                <div className="space-y-1 pr-2">
+                  <p className="font-bold text-[#0D1B2A]">Analītiskās & Statistiskās sīkdatnes</p>
+                  <p className="text-xs">
+                    Izmanto trešo pušu analītikas rīkus (piemēram, Google Analytics), lai apkopotu anonīmu statistiku par apmeklētāju skaitu, populārākajām lapām un uzturēšanās ilgumu. Tas palīdz uzlabot vietnes struktūru un saturu.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleToggle("analytics")}
+                  className={`shrink-0 w-11 h-6 rounded-full transition-colors relative focus:outline-none cursor-pointer mt-0.5 ${
+                    analytics ? "bg-[#0D1B2A]" : "bg-[#D0CCC4]"
+                  }`}
+                  aria-pressed={analytics}
+                >
+                  <span
+                    className={`block w-5 h-5 rounded-full bg-white transition-transform transform shadow-md flex items-center justify-center ${
+                      analytics ? "translate-x-5" : "translate-x-0.5"
+                    }`}
+                  >
+                    {analytics && <Check className="w-3 h-3 text-[#0D1B2A]" />}
+                  </span>
+                </button>
+              </div>
+
+              {/* Funkcionālās */}
+              <div className="bg-[#FAF9F5] p-3.5 rounded-xl border border-[#EAE6DD] flex items-start justify-between gap-3">
+                <div className="space-y-1 pr-2">
+                  <p className="font-bold text-[#0D1B2A]">Funkcionālās sīkdatnes</p>
+                  <p className="text-xs">
+                    Ļauj vietnei atcerēties Jūsu veiktās izvēles (piemēram, valodas iestatījumus, fontu izmēru un reģionu), nodrošinot ērtāku un personalizētāku lietošanu.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleToggle("functional")}
+                  className={`shrink-0 w-11 h-6 rounded-full transition-colors relative focus:outline-none cursor-pointer mt-0.5 ${
+                    functional ? "bg-[#0D1B2A]" : "bg-[#D0CCC4]"
+                  }`}
+                  aria-pressed={functional}
+                >
+                  <span
+                    className={`block w-5 h-5 rounded-full bg-white transition-transform transform shadow-md flex items-center justify-center ${
+                      functional ? "translate-x-5" : "translate-x-0.5"
+                    }`}
+                  >
+                    {functional && <Check className="w-3 h-3 text-[#0D1B2A]" />}
+                  </span>
+                </button>
+              </div>
+
+              {/* Mārketinga */}
+              <div className="bg-[#FAF9F5] p-3.5 rounded-xl border border-[#EAE6DD] flex items-start justify-between gap-3">
+                <div className="space-y-1 pr-2">
+                  <p className="font-bold text-[#0D1B2A]">Mārketinga & Reklāmas sīkdatnes</p>
+                  <p className="text-xs">
+                    Izmanto, lai rādītu Jūsu interesēm atbilstošākus paziņojumus un piedāvājumus sociālajos tīklos vai sadarbības partneru vietnēs.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleToggle("marketing")}
+                  className={`shrink-0 w-11 h-6 rounded-full transition-colors relative focus:outline-none cursor-pointer mt-0.5 ${
+                    marketing ? "bg-[#0D1B2A]" : "bg-[#D0CCC4]"
+                  }`}
+                  aria-pressed={marketing}
+                >
+                  <span
+                    className={`block w-5 h-5 rounded-full bg-white transition-transform transform shadow-md flex items-center justify-center ${
+                      marketing ? "translate-x-5" : "translate-x-0.5"
+                    }`}
+                  >
+                    {marketing && <Check className="w-3 h-3 text-[#0D1B2A]" />}
+                  </span>
+                </button>
               </div>
             </div>
           </section>
@@ -150,19 +268,97 @@ export default function CookiePolicyModal({ isOpen, onClose }: ModalProps) {
           </section>
 
           <section className="space-y-2">
-            <h4 className="font-display font-bold text-[#0D1B2A] text-lg">3. Типы используемых файлов куки</h4>
+            <h4 className="font-display font-bold text-[#0D1B2A] text-lg">3. Категории файлов cookie и их настройка</h4>
             <div className="space-y-3">
-              <div>
-                <p className="font-bold text-[#0D1B2A]">Необходимые файлы куки</p>
-                <p>
-                  Эти файлы куки жизненно необходимы для работы сайта. Без них некоторые части сайта могут работать некорректно. Обычно они устанавливаются только в ответ на ваши действия, такие как заполнение контактных форм.
+              {/* Obligātās */}
+              <div className="bg-[#FAF9F5] p-3.5 rounded-xl border border-[#EAE6DD]">
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <p className="font-bold text-[#0D1B2A]">Обязательные файлы cookie</p>
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-[#0D1B2A]/10 text-[#0D1B2A] px-2 py-0.5 rounded-full whitespace-nowrap">
+                    Всегда активны
+                  </span>
+                </div>
+                <p className="text-xs">
+                  Эти файлы cookie необходимы для основных функций веб-сайта, безопасности и непрерывной работы (например, поддержания сеанса, навигации и обработки контактных форм). Без них сайт не может работать корректно.
                 </p>
               </div>
-              <div>
-                <p className="font-bold text-[#0D1B2A]">Аналитические файлы куки</p>
-                <p>
-                  Мы используем сторонние инструменты (например, Google Analytics) для сбора анонимной информации о количестве посетителей и наиболее популярных страницах. Эти данные помогают нам улучшать пользовательский опыт.
-                </p>
+
+              {/* Analītiskās */}
+              <div className="bg-[#FAF9F5] p-3.5 rounded-xl border border-[#EAE6DD] flex items-start justify-between gap-3">
+                <div className="space-y-1 pr-2">
+                  <p className="font-bold text-[#0D1B2A]">Аналитические и статистические куки</p>
+                  <p className="text-xs">
+                    Используют аналитические инструменты сторонних разработчиков (например, Google Analytics) для сбора анонимной статистики о количестве посетителей, наиболее популярных страницах и продолжительности пребывания.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleToggle("analytics")}
+                  className={`shrink-0 w-11 h-6 rounded-full transition-colors relative focus:outline-none cursor-pointer mt-0.5 ${
+                    analytics ? "bg-[#0D1B2A]" : "bg-[#D0CCC4]"
+                  }`}
+                  aria-pressed={analytics}
+                >
+                  <span
+                    className={`block w-5 h-5 rounded-full bg-white transition-transform transform shadow-md flex items-center justify-center ${
+                      analytics ? "translate-x-5" : "translate-x-0.5"
+                    }`}
+                  >
+                    {analytics && <Check className="w-3 h-3 text-[#0D1B2A]" />}
+                  </span>
+                </button>
+              </div>
+
+              {/* Funkcionālās */}
+              <div className="bg-[#FAF9F5] p-3.5 rounded-xl border border-[#EAE6DD] flex items-start justify-between gap-3">
+                <div className="space-y-1 pr-2">
+                  <p className="font-bold text-[#0D1B2A]">Функциональные файлы cookie</p>
+                  <p className="text-xs">
+                    Позволяют сайту запоминать сделанный вами выбор (например, языковые настройки, размер шрифта и регион), обеспечивая более удобное и персонализированное использование.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleToggle("functional")}
+                  className={`shrink-0 w-11 h-6 rounded-full transition-colors relative focus:outline-none cursor-pointer mt-0.5 ${
+                    functional ? "bg-[#0D1B2A]" : "bg-[#D0CCC4]"
+                  }`}
+                  aria-pressed={functional}
+                >
+                  <span
+                    className={`block w-5 h-5 rounded-full bg-white transition-transform transform shadow-md flex items-center justify-center ${
+                      functional ? "translate-x-5" : "translate-x-0.5"
+                    }`}
+                  >
+                    {functional && <Check className="w-3 h-3 text-[#0D1B2A]" />}
+                  </span>
+                </button>
+              </div>
+
+              {/* Mārketinga */}
+              <div className="bg-[#FAF9F5] p-3.5 rounded-xl border border-[#EAE6DD] flex items-start justify-between gap-3">
+                <div className="space-y-1 pr-2">
+                  <p className="font-bold text-[#0D1B2A]">Маркетинговые и рекламные куки</p>
+                  <p className="text-xs">
+                    Используются для показа объявлений и предложений, соответствующих вашим интересам, в социальных сетях или на сайтах партнеров.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleToggle("marketing")}
+                  className={`shrink-0 w-11 h-6 rounded-full transition-colors relative focus:outline-none cursor-pointer mt-0.5 ${
+                    marketing ? "bg-[#0D1B2A]" : "bg-[#D0CCC4]"
+                  }`}
+                  aria-pressed={marketing}
+                >
+                  <span
+                    className={`block w-5 h-5 rounded-full bg-white transition-transform transform shadow-md flex items-center justify-center ${
+                      marketing ? "translate-x-5" : "translate-x-0.5"
+                    }`}
+                  >
+                    {marketing && <Check className="w-3 h-3 text-[#0D1B2A]" />}
+                  </span>
+                </button>
               </div>
             </div>
           </section>
@@ -259,19 +455,97 @@ export default function CookiePolicyModal({ isOpen, onClose }: ModalProps) {
           </section>
 
           <section className="space-y-2">
-            <h4 className="font-display font-bold text-[#0D1B2A] text-lg">3. Types of cookies used</h4>
+            <h4 className="font-display font-bold text-[#0D1B2A] text-lg">3. Cookie Categories and Customization</h4>
             <div className="space-y-3">
-              <div>
-                <p className="font-bold text-[#0D1B2A]">Necessary cookies</p>
-                <p>
-                  These cookies are essential for the website to function. Without them, some parts of the website may not work properly. They are typically set only in response to actions made by you, such as filling out contact forms.
+              {/* Mandatory */}
+              <div className="bg-[#FAF9F5] p-3.5 rounded-xl border border-[#EAE6DD]">
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <p className="font-bold text-[#0D1B2A]">Necessary Cookies (Mandatory)</p>
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-[#0D1B2A]/10 text-[#0D1B2A] px-2 py-0.5 rounded-full whitespace-nowrap">
+                    Always active
+                  </span>
+                </div>
+                <p className="text-xs">
+                  These cookies are required for basic website functions, security, and uninterrupted operation (e.g. session maintenance, navigation, contact forms). Without them, the website cannot function properly.
                 </p>
               </div>
-              <div>
-                <p className="font-bold text-[#0D1B2A]">Analytics cookies</p>
-                <p>
-                  We use third-party tools (such as Google Analytics) to collect anonymous information about the number of visitors and the most popular pages. This data helps us improve the user experience.
-                </p>
+
+              {/* Analytics */}
+              <div className="bg-[#FAF9F5] p-3.5 rounded-xl border border-[#EAE6DD] flex items-start justify-between gap-3">
+                <div className="space-y-1 pr-2">
+                  <p className="font-bold text-[#0D1B2A]">Analytics & Statistical Cookies</p>
+                  <p className="text-xs">
+                    Uses third-party analytics tools (such as Google Analytics) to collect anonymous statistics about the number of visitors, most popular pages, and session duration.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleToggle("analytics")}
+                  className={`shrink-0 w-11 h-6 rounded-full transition-colors relative focus:outline-none cursor-pointer mt-0.5 ${
+                    analytics ? "bg-[#0D1B2A]" : "bg-[#D0CCC4]"
+                  }`}
+                  aria-pressed={analytics}
+                >
+                  <span
+                    className={`block w-5 h-5 rounded-full bg-white transition-transform transform shadow-md flex items-center justify-center ${
+                      analytics ? "translate-x-5" : "translate-x-0.5"
+                    }`}
+                  >
+                    {analytics && <Check className="w-3 h-3 text-[#0D1B2A]" />}
+                  </span>
+                </button>
+              </div>
+
+              {/* Functional */}
+              <div className="bg-[#FAF9F5] p-3.5 rounded-xl border border-[#EAE6DD] flex items-start justify-between gap-3">
+                <div className="space-y-1 pr-2">
+                  <p className="font-bold text-[#0D1B2A]">Functional Cookies</p>
+                  <p className="text-xs">
+                    Allows the website to remember choices you make (such as language settings, font sizes, and region) to provide a more convenient and personalized experience.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleToggle("functional")}
+                  className={`shrink-0 w-11 h-6 rounded-full transition-colors relative focus:outline-none cursor-pointer mt-0.5 ${
+                    functional ? "bg-[#0D1B2A]" : "bg-[#D0CCC4]"
+                  }`}
+                  aria-pressed={functional}
+                >
+                  <span
+                    className={`block w-5 h-5 rounded-full bg-white transition-transform transform shadow-md flex items-center justify-center ${
+                      functional ? "translate-x-5" : "translate-x-0.5"
+                    }`}
+                  >
+                    {functional && <Check className="w-3 h-3 text-[#0D1B2A]" />}
+                  </span>
+                </button>
+              </div>
+
+              {/* Marketing */}
+              <div className="bg-[#FAF9F5] p-3.5 rounded-xl border border-[#EAE6DD] flex items-start justify-between gap-3">
+                <div className="space-y-1 pr-2">
+                  <p className="font-bold text-[#0D1B2A]">Marketing & Advertising Cookies</p>
+                  <p className="text-xs">
+                    Used to deliver relevant notifications and offers tailored to your interests on social media or partner websites.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleToggle("marketing")}
+                  className={`shrink-0 w-11 h-6 rounded-full transition-colors relative focus:outline-none cursor-pointer mt-0.5 ${
+                    marketing ? "bg-[#0D1B2A]" : "bg-[#D0CCC4]"
+                  }`}
+                  aria-pressed={marketing}
+                >
+                  <span
+                    className={`block w-5 h-5 rounded-full bg-white transition-transform transform shadow-md flex items-center justify-center ${
+                      marketing ? "translate-x-5" : "translate-x-0.5"
+                    }`}
+                  >
+                    {marketing && <Check className="w-3 h-3 text-[#0D1B2A]" />}
+                  </span>
+                </button>
               </div>
             </div>
           </section>

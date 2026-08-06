@@ -1026,7 +1026,7 @@ export default function Home() {
             <span className="inline-block text-[10px] font-bold uppercase tracking-widest text-[#D4AF37] bg-white/10 px-4 py-1.5 rounded-full backdrop-blur-md">
               {lang === "LV" ? "Sper pirmo soli šodien" : lang === "EN" ? "Take the first step today" : "Сделайте первый шаг сегодня"}
             </span>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-black tracking-tight text-white uppercase leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-black tracking-tight text-white uppercase leading-tight">
               {lang === "LV" ? (
                 <>Atklāj pasauli, <br className="hidden md:inline" /> kas <span className="text-[#D4AF37]">Tevi gaida</span></>
               ) : lang === "EN" ? (
@@ -1058,7 +1058,7 @@ export default function Home() {
                 ? "Every great adventure starts with a single decision" 
                 : "Каждое великое приключение начинается с одного решения"}
             </h3>
-            <p className="text-xs sm:text-sm text-[#ECEAE4]/90 leading-relaxed font-light">
+            <p className="text-xs sm:text-sm md:text-base text-[#ECEAE4]/95 leading-relaxed font-light">
               {lang === "LV" 
                 ? "Ja arī Tu vēlies ceļot vairāk, iepazīt pasauli, satikt interesantus cilvēkus vai vienkārši uzzināt par iespējām, kas var sniegt lielāku brīvību, priecāšos ar Tevi iepazīties. Sazinies ar mani jau šodien un sper pirmo soli pretī jaunai piedzīvojumu pilnai pieredzei!" 
                 : lang === "EN" 

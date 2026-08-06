@@ -155,7 +155,7 @@ export default function Footer() {
 
       {/* Apakšējā copyright josla */}
       <div className="max-w-7xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-12 items-center text-sm text-[#8C8A84] gap-4">
-        {/* Kreisā puse: Autortiesības (paplašināts līdz col-span-5, lai novērstu pāriešanu jaunā rindā) */}
+        {/* Kreisā puse: Autortiesības */}
         <div className="text-center md:text-left leading-relaxed md:col-span-5">
           <span className="block sm:inline">
             {lang === "LV" ? "2026 © Visas tiesības aizsargātas" : lang === "EN" ? "2026 © All rights reserved" : "2026 © Все права защищены"}
@@ -164,8 +164,8 @@ export default function Footer() {
           <span className="block sm:inline">Travel with Martins</span>
         </div>
 
-        {/* Vidus: Privātuma un sīkdatņu politika (pārvietots uz ekrāna vidu desktop versijā, nedaudz pa labi ar md:col-span-4 un md:pl-8) */}
-        <div className="flex items-center justify-center space-x-4 md:col-span-4 md:pl-8">
+        {/* Vidus: Privātuma un sīkdatņu politika */}
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 md:col-span-4">
           <button
             onClick={() => setCookieOpen(true)}
             className="hover:text-white hover:underline transition-colors cursor-pointer text-sm whitespace-nowrap"
@@ -181,16 +181,16 @@ export default function Footer() {
           </button>
         </div>
 
-        {/* Labā puse: Izstrādātājs un saite uz Sageon Media */}
-        <div className="flex items-center justify-center md:justify-end gap-2 md:col-span-3">
-          <span className="text-xs">
+        {/* Labā puse: Izstrādātājs Sageon Media labajā apakšējā stūrī */}
+        <div className="flex items-center justify-center md:justify-end gap-2 md:col-span-3 text-right text-sm">
+          <span>
             {lang === "LV" ? "Izstrādātājs:" : lang === "EN" ? "Developer:" : "Разработчик:"}
           </span>
           <a
             href="https://sageonmedia.eu"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold text-[#D4AF37] hover:text-white hover:underline transition-all cursor-pointer z-10"
+            className="font-semibold text-[#D4AF37] hover:text-white hover:underline transition-all cursor-pointer z-10"
             title="Sageon Media"
           >
             Sageon Media
