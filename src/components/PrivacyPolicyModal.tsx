@@ -15,7 +15,7 @@ export default function PrivacyPolicyModal({ isOpen, onClose }: ModalProps) {
       return (
         <div className="space-y-6 text-sm text-[#5A5854] leading-relaxed">
           <p className="text-xs text-[#8C8A84] italic">
-            Pēdējo reizi atjaunots: 2025.gada maijs
+            Pēdējo reizi atjaunots: 2026.gada janvāris
           </p>
 
           <section className="space-y-2">
@@ -170,7 +170,7 @@ export default function PrivacyPolicyModal({ isOpen, onClose }: ModalProps) {
       return (
         <div className="space-y-6 text-sm text-[#5A5854] leading-relaxed">
           <p className="text-xs text-[#8C8A84] italic">
-            Последнее обновление: май 2025 года
+            Последнее обновление: январь 2026 года
           </p>
 
           <section className="space-y-2">
@@ -309,7 +309,7 @@ export default function PrivacyPolicyModal({ isOpen, onClose }: ModalProps) {
       return (
         <div className="space-y-6 text-sm text-[#5A5854] leading-relaxed">
           <p className="text-xs text-[#8C8A84] italic">
-            Last updated: May 2025
+            Last updated: January 2026
           </p>
 
           <section className="space-y-2">
