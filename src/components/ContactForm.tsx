@@ -183,7 +183,7 @@ export default function ContactForm({ lang: propLang }: ContactFormProps) {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 bg-[#D4AF37] text-white rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-[#3E526B] transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer disabled:bg-[#D4AF37]/50 disabled:cursor-not-allowed"
+                className="w-full py-4 bg-[#D4AF37] text-[#0D1B2A] rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-[#0D1B2A] hover:text-[#D4AF37] transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer disabled:bg-[#D4AF37]/50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   activeLang === "EN" ? "Sending..." : activeLang === "RU" ? "Отправка..." : "Sūta..."

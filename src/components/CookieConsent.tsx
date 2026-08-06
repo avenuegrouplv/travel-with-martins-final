@@ -29,10 +29,10 @@ export default function CookieConsent() {
     // Check if user has already made a decision
     const consent = localStorage.getItem("travel_cookie_consent");
     if (!consent) {
-      // Set visibility after a 1.2-second delay to feel natural and medium-slow
+      // Set visibility after a 3-second delay as requested
       const timer = setTimeout(() => {
         setIsVisible(true);
-      }, 1200);
+      }, 3000);
       return () => clearTimeout(timer);
     }
   }, []);

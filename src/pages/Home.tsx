@@ -289,12 +289,24 @@ export default function Home() {
     }
   }, []);
 
+  const [loadedSlides, setLoadedSlides] = useState<number[]>([0]);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
     }, 6000);
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    setLoadedSlides((prev) => {
+      const nextSlide = (currentSlide + 1) % HERO_IMAGES.length;
+      if (!prev.includes(currentSlide) || !prev.includes(nextSlide)) {
+        return Array.from(new Set([...prev, currentSlide, nextSlide]));
+      }
+      return prev;
+    });
+  }, [currentSlide]);
 
   const activeSlideData = t.home.heroSlides[currentSlide] || t.home.heroSlides[0];
 
@@ -314,6 +326,9 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           {HERO_IMAGES.map((slide, idx) => {
             const isActive = idx === currentSlide;
+            const isLoaded = loadedSlides.includes(idx);
+            if (!isLoaded && idx !== 0) return null;
+
             return (
               <img
                 key={idx}
@@ -323,6 +338,8 @@ export default function Home() {
                 loading={idx === 0 ? "eager" : "lazy"}
                 fetchPriority={idx === 0 ? "high" : "low"}
                 decoding="async"
+                width="1920"
+                height="1080"
                 className={`absolute inset-0 w-full h-full transition-opacity duration-[1500ms] ease-in-out object-cover ${slide.positionClass || "object-center"} ${
                   isActive 
                     ? "opacity-100" 
@@ -451,7 +468,7 @@ export default function Home() {
         {/* Virsraksts un stāsts */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#9E7B1D] bg-[#0D1B2A]/5 px-3 py-1 rounded inline-block">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37] bg-[#0D1B2A]/5 px-3 py-1 rounded inline-block">
               {t.home.aboutBadge}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black tracking-tight text-[#0D1B2A] uppercase">
@@ -516,6 +533,8 @@ export default function Home() {
               <img
                 src="/piesakies-bezmaksas-konsultacijai-ar-martinu.webp"
                 alt="Piesakies bezmaksas konsultācijai"
+                width="640"
+                height="480"
                 className="w-full h-full object-cover object-center"
                 loading="lazy"
                 fetchPriority="low"
@@ -527,6 +546,8 @@ export default function Home() {
               <img
                 src="/celo-vairak-veido-dzivi-brivaku.webp"
                 alt="Ceļo vairāk, veido dzīvi brīvāku"
+                width="640"
+                height="480"
                 className="w-full h-full object-cover object-center"
                 loading="lazy"
                 fetchPriority="low"
@@ -734,7 +755,7 @@ export default function Home() {
       {/* 5. Galamērķi Preview (Horizontālais ritināmais saraksts ar visiem galamērķiem) */}
       <section className="py-8 px-6 max-w-7xl mx-auto overflow-hidden">
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#9E7B1D]">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37]">
             {lang === "LV" ? "Piedāvājumi" : lang === "EN" ? "Offers" : "Предложения"}
           </span>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#0D1B2A] tracking-tight">
@@ -828,7 +849,7 @@ export default function Home() {
       {/* 7. Noderīgi padomi */}
       <section className="py-8 px-6 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#9E7B1D]">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37]">
             {lang === "LV" ? "Noderīgi padomi" : lang === "EN" ? "Useful Tips" : "Полезные советы"}
           </span>
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#0D1B2A] tracking-tight uppercase">
@@ -986,6 +1007,8 @@ export default function Home() {
           alt="Travel with Martins Background"
           loading="lazy"
           decoding="async"
+          width="1280"
+          height="720"
           className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none opacity-40"
         />
 
