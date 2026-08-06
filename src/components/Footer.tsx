@@ -31,6 +31,8 @@ export default function Footer() {
             <img
               src={MAIN_LOGO_BASE64}
               alt="Travel with Martins"
+              width={200}
+              height={48}
               referrerPolicy="no-referrer"
               className="h-12 w-auto object-contain brightness-0 invert"
             />
@@ -42,9 +44,9 @@ export default function Footer() {
 
         {/* 2. stabiņš: Sadaļas */}
         <div>
-          <h4 className="text-sm font-bold uppercase tracking-wider text-[#D4AF37] mb-6">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-[#D4AF37] mb-6">
             {t.footer.linksTitle}
-          </h4>
+          </h3>
           <ul className="space-y-3 text-sm text-[#B2B0A9]">
             {navigationLinks.map((link) => (
               <li key={link.name}>
@@ -58,9 +60,9 @@ export default function Footer() {
 
         {/* 3. stabiņš: Seko man (iecentrēts pilnībā) */}
         <div className="flex flex-col items-center text-center">
-          <h4 className="text-sm font-bold uppercase tracking-wider text-[#D4AF37] mb-6">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-[#D4AF37] mb-6">
             {lang === "LV" ? "Seko man" : lang === "EN" ? "Follow me" : "Подписывайтесь"}
-          </h4>
+          </h3>
           <div className="flex space-x-4 justify-center">
             <a
               href="https://www.facebook.com/share/14iUDFF18v6/?mibextid=wwXIfr"
@@ -97,9 +99,9 @@ export default function Footer() {
 
         {/* 4. stabiņš: Kontaktinformācija (līdzināts pret labo malu) */}
         <div className="text-left sm:text-right flex flex-col items-start sm:items-end">
-          <h4 className="text-sm font-bold uppercase tracking-wider text-[#D4AF37] mb-6 w-full text-left sm:text-right">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-[#D4AF37] mb-6 w-full text-left sm:text-right">
             {t.footer.contactsTitle}
-          </h4>
+          </h3>
           <div className="space-y-4 text-sm text-[#B2B0A9] w-full">
             <div className="text-white font-semibold text-left sm:text-right">
               Mārtiņš Šics

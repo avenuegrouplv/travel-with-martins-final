@@ -86,6 +86,8 @@ export default function Header() {
           <img
             src={MAIN_LOGO_BASE64}
             alt="Travel with Martins"
+            width={240}
+            height={64}
             referrerPolicy="no-referrer"
             style={{
               filter: isAtTopHome ? "brightness(0) invert(1)" : "none",

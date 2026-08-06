@@ -345,8 +345,8 @@ export default function Home() {
                 src={slide.image}
                 alt="Travel with Martins Background"
                 referrerPolicy="no-referrer"
-                loading="eager"
-                fetchPriority={idx <= 1 ? "high" : "auto"}
+                loading={idx === 0 ? "eager" : "lazy"}
+                fetchPriority={idx === 0 ? "high" : "low"}
                 decoding="async"
                 className={`absolute inset-0 w-full h-full transition-all duration-[1500ms] ease-in-out object-cover ${slide.positionClass || "object-center"} ${
                   isActive 
@@ -546,8 +546,8 @@ export default function Home() {
                 src="/piesakies-bezmaksas-konsultacijai-ar-martinu.webp"
                 alt="Piesakies bezmaksas konsultācijai"
                 className="w-full h-full object-cover object-center"
-                loading="eager"
-                fetchPriority="high"
+                loading="lazy"
+                fetchPriority="low"
                 decoding="async"
                 referrerPolicy="no-referrer"
               />
@@ -557,8 +557,8 @@ export default function Home() {
                 src="/celo-vairak-veido-dzivi-brivaku.webp"
                 alt="Ceļo vairāk, veido dzīvi brīvāku"
                 className="w-full h-full object-cover object-center"
-                loading="eager"
-                fetchPriority="high"
+                loading="lazy"
+                fetchPriority="low"
                 decoding="async"
                 referrerPolicy="no-referrer"
               />
@@ -802,11 +802,11 @@ export default function Home() {
                   <img 
                     src={item.image} 
                     alt={transItem.name} 
-                    loading="eager"
+                    loading="lazy"
                     decoding="async"
-                    fetchPriority="high"
-                    width="500"
-                    height="281"
+                    fetchPriority="low"
+                    width="400"
+                    height="225"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
